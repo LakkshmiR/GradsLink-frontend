@@ -3,7 +3,7 @@ import PostPage from "./postPage";
 import JobsPage from "./jobsPage";
 import Login from "./login";
 import Register from "./register";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./protectedRoute";
 import ForgotPassword from "./forgotPassword";
 import Globalclass from "./globalclass";
 import Homepage from "./homepage";
