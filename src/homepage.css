@@ -1,0 +1,39 @@
+.homepage-header {
+  display: flex;
+  justify-content: space-between;
+}
+.loginbtn-homepage {
+  background: #0ef;
+  color: #000;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  height: clamp(1.8rem, 2.5vw, 2.5rem);
+  width: clamp(3.2rem, 6vw, 6.25rem);
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+.heading-homepage {
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+@media (max-width: 650px) {
+  .homepage-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .homepage-userbtn {
+    display: flex;
+  }
+  .loginbtn-homepage {
+    margin-top: 0;
+    margin-right: 0.2rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+  }
+}

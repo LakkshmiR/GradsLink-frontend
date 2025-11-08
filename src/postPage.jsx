@@ -1,0 +1,136 @@
+import "./postPage.css";
+import Globalclass from "./globalclass";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+function PostPage() {
+  const [companyName, SetCompanyName] = useState("");
+  const [jobrole, SetJobrole] = useState("");
+  const [experience, SetExperience] = useState("");
+  const [link, SetLink] = useState("");
+  const navigate = useNavigate();
+
+  const handleAdd = () => {
+    if (companyName == "" || jobrole == "" || experience == "" || link == "") {
+      alert("Fill empty fields!!!");
+    }
+    if (companyName != "" && jobrole != "" && experience != "" && link != "") {
+      const postedBy = localStorage.getItem("name");
+      axios
+        .post("http://localhost:3000/add", {
+          companyName: companyName,
+          jobrole: jobrole,
+          experience: experience,
+          link: link,
+          postedBy: postedBy,
+        })
+        .then((result) => {
+          navigate("/jobslist");
+          console.log(result);
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
+  return (
+    // <>
+    //   <div className="postpage-container">
+    //     <div className="cn">
+    //       <p>Company Name:</p>
+    //       <input
+    //         type="text"
+    //         className="input-cn"
+    //         onChange={(e) => {
+    //           SetCompanyName(e.target.value);
+    //         }}
+    //       />
+    //     </div>
+    //     <div className="cn">
+    //       <p>Job Role:</p>
+    //       <input
+    //         type="text"
+    //         className="input-cn"
+    //         onChange={(e) => {
+    //           SetJobrole(e.target.value);
+    //         }}
+    //       />
+    //     </div>
+    //     <div className="cn">
+    //       <p>Experience:</p>
+    //       <input
+    //         type="text"
+    //         className="input-cn"
+    //         onChange={(e) => {
+    //           SetExperience(e.target.value);
+    //         }}
+    //       />
+    //     </div>
+    //     <div className="cn">
+    //       <p>Link:</p>
+    //       <input
+    //         type="text"
+    //         className="input-cn"
+    //         onChange={(e) => {
+    //           SetLink(e.target.value);
+    //         }}
+    //       />
+    //     </div>
+
+    //     <br />
+    //     <button type="submit" className="post-btn" onClick={handleAdd}>
+    //       Post
+    //     </button>
+    //   </div>
+    // </>
+    <>
+      <Globalclass />
+      <div className="postpage-container">
+        <div className="post-wrapper">
+          <h1 className="heading">Post a Job 🚀</h1>
+          <p className="subtext">Let's Reduce Job Search Time grads!!</p>
+
+          <div className="cn">
+            <input
+              type="text"
+              placeholder="Company Name"
+              className="input-cn"
+              onChange={(e) => SetCompanyName(e.target.value)}
+            />
+          </div>
+
+          <div className="cn">
+            <input
+              type="text"
+              placeholder="Job Role"
+              className="input-cn"
+              onChange={(e) => SetJobrole(e.target.value)}
+            />
+          </div>
+
+          <div className="cn">
+            <input
+              type="text"
+              placeholder="Experience Required"
+              className="input-cn"
+              onChange={(e) => SetExperience(e.target.value)}
+            />
+          </div>
+
+          <div className="cn">
+            <input
+              type="text"
+              placeholder="Application Link"
+              className="input-cn"
+              onChange={(e) => SetLink(e.target.value)}
+            />
+          </div>
+
+          <button type="submit" className="post-btn" onClick={handleAdd}>
+            Post
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+export default PostPage;

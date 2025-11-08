@@ -1,0 +1,93 @@
+.global-class {
+  display: flex;
+  justify-content: space-between !important;
+}
+.logo {
+  color: #0ef;
+  text-shadow: 0 0 25px #0ef;
+  font-size: 40px;
+}
+
+/* .global-styles {
+  display: flex;
+} */
+.user-count {
+  color: white;
+  margin-top: 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+.user-row {
+  display: flex;
+  align-items: center;
+  position: relative; /* important for dropdown */
+  gap: 10px;
+}
+
+.user {
+  /* font-size: 2rem; */
+  font-size: clamp(1.4rem, 4vw, 2rem);
+
+  color: white;
+}
+
+.three-dots {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+
+  cursor: pointer;
+  padding: 4px 8px;
+  user-select: none;
+  border-radius: 6px;
+  color: white;
+}
+
+.three-dots:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown menu */
+.logout-dropdown {
+  position: absolute;
+  top: 55px; /* below the three dots */
+  right: 0; /* align to the right */
+  background: #062a3f;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #0ef;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.logout-dropdown:hover {
+  background: #0ef;
+  color: #000;
+}
+
+@media (max-width: 650px) {
+  .global-class {
+    display: flex;
+    justify-content: unset;
+    flex-direction: column;
+    text-align: center;
+  }
+  .user-row {
+    position: relative;
+    font-size: 30px;
+    padding: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .three-dots {
+    position: absolute;
+    top: -70px; /* adjust */
+    right: 10px;
+  }
+  .logout-dropdown {
+    font-size: 1rem;
+  }
+
+  .logo {
+    font-size: 35px;
+  }
+}
