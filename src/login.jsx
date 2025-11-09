@@ -104,12 +104,20 @@ function Login() {
           </div>
 
           <div className="extra-links">
-            <a href="#" onClick={() => navigate("/forgotPassword")} className="login-link-class">
+            <span
+              onClick={() => navigate("/forgotPassword")}
+              className="login-link-class"
+              style={{ cursor: "pointer" }}
+            >
               Forgot password?
-            </a>
-            <a href="#" onClick={() => navigate("/register")} className="login-link-class">
+            </span>
+            <span
+              onClick={() => navigate("/register")}
+              className="login-link-class"
+              style={{ cursor: "pointer" }}
+            >
               Create account
-            </a>
+            </span>
           </div>
 
           <button type="submit" className="login-btn" onClick={handleLogin}>
