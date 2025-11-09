@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import PostPage from "./postPage";
 import JobsPage from "./jobsPage";
 import Login from "./login";
@@ -11,7 +12,7 @@ import Footer from "./footer";
 export function Router() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route
@@ -35,7 +36,7 @@ export function Router() {
           <Route path="/forgotPassword" element={<ForgotPassword />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

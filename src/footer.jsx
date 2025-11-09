@@ -7,6 +7,10 @@ const Footer = () => {
   return (
     <footer
       style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        width: "100%",
         textAlign: "center",
         padding: "20px",
         backgroundColor: "#0e0e0e",
