@@ -10,14 +10,14 @@ function JobsPage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/get")
+      .get("http://3.108.238.91:3000/get")
       .then((result) => setcompanys(result.data))
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
     const loggedinuser = localStorage.getItem("name");
     axios
-      .delete("http://localhost:3000/delete/" + id, { data: { loggedinuser: loggedinuser } })
+      .delete("http://3.108.238.91:3000/delete/" + id, { data: { loggedinuser: loggedinuser } })
       .then((result) => {
         alert(result.data);
         location.reload();
@@ -47,8 +47,6 @@ function JobsPage() {
   return (
     <>
       <Globalclass hidethis={false} />
-      {/* <button className="post-btn-jobspage">post</button> */}
-      {/* <div className="jobs-wrapper"> */}
 
       <h1 className="heading-jobspage">Posted Jobs</h1>
 
@@ -132,11 +130,6 @@ function JobsPage() {
           Next
         </button>
       </div>
-      {/* <button onClick={handleLogout} className="login-btn">
-            Logout
-          </button> */}
-      {/* </div> */}
-      {/* </div> */}
     </>
   );
 }
@@ -147,10 +140,10 @@ export default JobsPage;
 
 // Protects your site from a hacking technique called tabnabbing
 
-// ✅ noreferrer
+//  noreferrer
 
 // Hides your site URL from the site you are opening
 
 // Some ads or tracking websites don’t see where you came from
 
-// ✅ Final Safe Format
+//  Final Safe Format

@@ -7,6 +7,7 @@ import ProtectedRoute from "./protectedRoute";
 import ForgotPassword from "./forgotPassword";
 import Globalclass from "./globalclass";
 import Homepage from "./homepage";
+import Footer from "./footer";
 export function Router() {
   return (
     <>
@@ -33,6 +34,7 @@ export function Router() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

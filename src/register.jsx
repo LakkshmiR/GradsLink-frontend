@@ -9,7 +9,7 @@ function Register() {
   const navigate = useNavigate();
   const handleRegister = () => {
     axios
-      .post("http://localhost:3000/regpost", {
+      .post("http://3.108.238.91:3000/regpost", {
         name: name,
         email: email,
         password: password,
@@ -25,45 +25,6 @@ function Register() {
   };
 
   return (
-    // <>
-    //   <h1 className="heading">Register</h1>
-    //   <div className="login-elements">
-    //     <p>Name: </p>
-    //     <input
-    //       type="text"
-    //       className="login-input"
-    //       onChange={(e) => {
-    //         setName(e.target.value);
-    //       }}
-    //     />
-    //   </div>
-    //   <div className="login-elements">
-    //     <p>Email: </p>
-    //     <input type="text" className="login-input" onChange={(e) => setEmail(e.target.value)} />
-    //   </div>
-    //   <div className="login-elements">
-    //     <p>Password: </p>
-    //     <input type="text" className="login-input" onChange={(e) => setPassword(e.target.value)} />
-    //   </div>
-    //   <div className="login-elements">
-    //     <p>PassedOut Year: 2025 only</p>
-    //   </div>
-    //   <div className="login-elements">
-    //     <p>Already have an Account?</p>
-    //     <a
-    //       href=""
-    //       onClick={() => {
-    //         navigate("/login");
-    //       }}
-    //       className="link-class"
-    //     >
-    //       Login
-    //     </a>
-    //   </div>
-    //   <button type="submit" className="login-btn" onClick={handleRegister}>
-    //     Register
-    //   </button>
-    // </>
     <>
       <h1 className="user-logo">GradsLink'25</h1>
 

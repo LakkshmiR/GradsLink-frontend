@@ -11,14 +11,14 @@ function Homepage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/get")
+      .get("http://3.108.238.91:3000/get")
       .then((result) => setcompanys(result.data))
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
     const loggedinuser = localStorage.getItem("name");
     axios
-      .delete("http://localhost:3000/delete/" + id, { data: { loggedinuser: loggedinuser } })
+      .delete("http://3.108.238.91:3000/delete/" + id, { data: { loggedinuser: loggedinuser } })
       .then((result) => {
         alert(result.data);
         location.reload();
@@ -128,11 +128,6 @@ function Homepage() {
           Post +
         </button>
       </div>
-      {/* <button onClick={handleLogout} className="login-btn">
-            Logout
-          </button> */}
-      {/* </div> */}
-      {/* </div> */}
     </>
   );
 }

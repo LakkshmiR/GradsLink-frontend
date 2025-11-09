@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
   const handleLogin = () => {
     axios
-      .post("http://localhost:3000/login", {
+      .post("http://3.108.238.91:3000/login", {
         loginemail: loginemail,
         loginpw: loginpw,
       })

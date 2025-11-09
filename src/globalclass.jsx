@@ -15,7 +15,7 @@ function Globalclass({ hidethis }) {
   const [usercount, setusercount] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:3000/totalusers")
+      .get("http://3.108.238.91:3000/totalusers")
       .then((result) => {
         console.log(result);
         setusercount(result.data);

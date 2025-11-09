@@ -10,7 +10,7 @@ function ForgotPassword() {
   const handleReset = () => {
     if (registeremail != "" && newpw != "") {
       axios
-        .post("http://localhost:3000/forgotpw", { registeremail: registeremail, newpw: newpw })
+        .post("http://3.108.238.91:3000/forgotpw", { registeremail: registeremail, newpw: newpw })
         .then((result) => {
           alert(result.data);
 

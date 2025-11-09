@@ -17,7 +17,7 @@ function PostPage() {
     if (companyName != "" && jobrole != "" && experience != "" && link != "") {
       const postedBy = localStorage.getItem("name");
       axios
-        .post("http://localhost:3000/add", {
+        .post("http://3.108.238.91:3000/add", {
           companyName: companyName,
           jobrole: jobrole,
           experience: experience,
@@ -33,55 +33,6 @@ function PostPage() {
   };
 
   return (
-    // <>
-    //   <div className="postpage-container">
-    //     <div className="cn">
-    //       <p>Company Name:</p>
-    //       <input
-    //         type="text"
-    //         className="input-cn"
-    //         onChange={(e) => {
-    //           SetCompanyName(e.target.value);
-    //         }}
-    //       />
-    //     </div>
-    //     <div className="cn">
-    //       <p>Job Role:</p>
-    //       <input
-    //         type="text"
-    //         className="input-cn"
-    //         onChange={(e) => {
-    //           SetJobrole(e.target.value);
-    //         }}
-    //       />
-    //     </div>
-    //     <div className="cn">
-    //       <p>Experience:</p>
-    //       <input
-    //         type="text"
-    //         className="input-cn"
-    //         onChange={(e) => {
-    //           SetExperience(e.target.value);
-    //         }}
-    //       />
-    //     </div>
-    //     <div className="cn">
-    //       <p>Link:</p>
-    //       <input
-    //         type="text"
-    //         className="input-cn"
-    //         onChange={(e) => {
-    //           SetLink(e.target.value);
-    //         }}
-    //       />
-    //     </div>
-
-    //     <br />
-    //     <button type="submit" className="post-btn" onClick={handleAdd}>
-    //       Post
-    //     </button>
-    //   </div>
-    // </>
     <>
       <Globalclass />
       <div className="postpage-container">
