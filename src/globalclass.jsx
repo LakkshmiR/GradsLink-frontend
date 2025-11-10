@@ -30,7 +30,7 @@ function Globalclass({ hidethis }) {
     <>
       <div className="global-styles">
         <div className="global-class">
-          <h1 className="logo">GradsLink'25</h1>
+          <h1 className="logo">GradsLink</h1>
           <div>
             {!hidethis && (
               <div className="user-row">

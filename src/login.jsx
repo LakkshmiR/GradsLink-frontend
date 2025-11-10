@@ -78,7 +78,7 @@ function Login() {
     //   </div>
     // </>
     <>
-      <h1 className="user-logo">GradsLink'25</h1>
+      <h1 className="user-logo">GradsLink</h1>
       {/* <p>A Web App to connect 2025 Graduates</p> */}
       <div className="login-container">
         <div className="login-wrapper">

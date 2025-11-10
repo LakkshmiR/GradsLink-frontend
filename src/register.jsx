@@ -26,7 +26,7 @@ function Register() {
 
   return (
     <>
-      <h1 className="user-logo">GradsLink'25</h1>
+      <h1 className="user-logo">GradsLink</h1>
 
       <div className="login-container">
         <div className="login-wrapper">
@@ -63,7 +63,7 @@ function Register() {
           <div className="login-elements">
             <input
               type="text"
-              value="Passed Out : 2025 (2025 only)"
+              value="Engineering Freshers only"
               readOnly
               className="login-input readonly"
             />
@@ -71,9 +71,9 @@ function Register() {
 
           <div className="extra-links">
             <p className="link-class account-text">Already have an account?</p>
-            <a href="#" onClick={() => navigate("/login")} className="login-link-class">
+            <span onClick={() => navigate("/login")} className="login-link-class">
               Login
-            </a>
+            </span>
           </div>
 
           <button type="submit" className="login-btn" onClick={handleRegister}>
