@@ -15,7 +15,7 @@ function Login() {
       })
       .then((result) => {
         if (result.data.message === "Login success") {
-          localStorage.setItem("token", result.data.email);
+          localStorage.setItem("token", result.data.token);
           localStorage.setItem("name", result.data.name);
           localStorage.setItem("email", result.data.email);
           navigate("/jobslist");

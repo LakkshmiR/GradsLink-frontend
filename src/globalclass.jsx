@@ -8,6 +8,9 @@ function Globalclass({ hidethis }) {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+
     navigate("/login");
     alert("You are logged out!!");
   };
