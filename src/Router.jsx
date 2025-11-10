@@ -10,6 +10,8 @@ import Globalclass from "./globalclass";
 import Homepage from "./homepage";
 import Footer from "./footer";
 import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
+
 export function Router() {
   return (
     <>
