@@ -9,6 +9,7 @@ import ForgotPassword from "./forgotPassword";
 import Globalclass from "./globalclass";
 import Homepage from "./homepage";
 import Footer from "./footer";
+import { useEffect } from "react";
 export function Router() {
   return (
     <>
@@ -31,7 +32,10 @@ export function Router() {
               </ProtectedRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Login />}
+          />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
         </Routes>
