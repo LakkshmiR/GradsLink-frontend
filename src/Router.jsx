@@ -17,7 +17,10 @@ export function Router() {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route
+            path="/"
+            element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Homepage />}
+          />
           <Route
             path="/postjob"
             element={
