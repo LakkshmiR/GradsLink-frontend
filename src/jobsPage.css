@@ -301,6 +301,7 @@ tr:nth-of-type(n) {
   margin-top: 1rem;
   text-align: center;
   justify-content: space-between;
+  padding-bottom: 80px;
 }
 .prevnext-btn {
   width: 100px;
