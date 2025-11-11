@@ -343,7 +343,7 @@ tr:nth-of-type(n) {
   transform: translateY(-2px);
   box-shadow: 0 0 15px #0ef;
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .heading-jobspage {
     padding-top: 0;
   }

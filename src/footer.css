@@ -12,5 +12,6 @@
 @media (max-width: 600px) {
   .footer-style {
     font-size: 12px;
+    text-align: center;
   }
 }
