@@ -90,8 +90,6 @@
 
   .logo {
     font-size: 35px;
-  }
-  .user {
-    padding: 0;
+    padding-left: 0;
   }
 }
