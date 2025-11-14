@@ -103,7 +103,7 @@ function Login() {
           localStorage.setItem("token", result.data.token);
           localStorage.setItem("name", result.data.name);
           localStorage.setItem("email", result.data.email);
-          navigate("/jobslist");
+          navigate("/jobslist", { replace: true });
         } else {
           alert(result.data);
         }
