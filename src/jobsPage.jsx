@@ -214,11 +214,12 @@ function JobsPage() {
       <Globalclass hidethis={false} />
 
       <h1 className="heading-jobspage">Posted Jobs</h1>
+      <p className="subtext">Let's Reduce Job Search Time grads!!</p>
 
       <div className="search-container">
         <input
           type="text"
-          placeholder="Search role here..."
+          placeholder="Search here..."
           className="search-input"
           onChange={(e) => setSearchtext(e.target.value)}
         />

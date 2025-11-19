@@ -214,12 +214,13 @@ function Homepage() {
         </div>
       </div>
       <h1 className="heading-homepage">Posted Jobs</h1>
+      <p className="subtext">Let's Reduce Job Search Time grads!!</p>
 
       <div className="job-elements">
         <div className="search-container">
           <input
             type="text"
-            placeholder="Search role here..."
+            placeholder="Search here..."
             className="search-input"
             onChange={(e) => setSearchtext(e.target.value)}
           />
