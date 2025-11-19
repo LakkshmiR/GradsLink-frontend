@@ -187,8 +187,10 @@ function JobsPage() {
       })
       .catch((err) => console.log(err));
   };
-  const filteredjobs = companys.filter((company) =>
-    company.jobrole.toLowerCase().includes(searchtext.toLowerCase())
+  const filteredjobs = companys.filter(
+    (company) =>
+      company.jobrole.toLowerCase().includes(searchtext.toLowerCase()) ||
+      company.companyName.toLowerCase().includes(searchtext.toLowerCase())
   );
   useEffect(() => {
     if (searchtext != "" && filteredjobs.length === 0) {
