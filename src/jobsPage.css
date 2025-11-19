@@ -385,3 +385,9 @@ tr:nth-of-type(n) {
     font-size: 12px;
   }
 }
+.jobs-subtext {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+}

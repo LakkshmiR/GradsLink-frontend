@@ -214,7 +214,7 @@ function JobsPage() {
       <Globalclass hidethis={false} />
 
       <h1 className="heading-jobspage">Posted Jobs</h1>
-      <p className="subtext">Let's Reduce Job Search Time grads!!</p>
+      <p className="jobs-subtext">Post the Jobs U Apply!!</p>
 
       <div className="search-container">
         <input
