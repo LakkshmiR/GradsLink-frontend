@@ -214,7 +214,7 @@ function Homepage() {
         </div>
       </div>
       <h1 className="heading-homepage">Posted Jobs</h1>
-      <p className="jobs-subtext">Post t!!</p>
+      <p className="jobs-subtext">Post the Jobs U Apply!!</p>
 
       <div className="job-elements">
         <div className="search-container">
