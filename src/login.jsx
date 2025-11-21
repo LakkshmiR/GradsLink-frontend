@@ -179,9 +179,9 @@ function Login() {
               theme="filled_blue"
               onSuccess={handleGoogleLogin}
               onError={() => console.log("error")}
-              text="signin_with"
               useOneTap={false}
               auto_select={false}
+              text="signin_with"
             />
           </div>
         </div>
