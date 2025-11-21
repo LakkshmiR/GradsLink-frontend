@@ -12,8 +12,7 @@ createRoot(document.getElementById("root")).render(
         google.accounts.id.initialize({
           client_id: "789816508710-pt97v4vabqar5kiea24mkhnqsbgeovhl.apps.googleusercontent.com",
           callback: handleGoogleLogin,
-          auto_select: false, // <---- IMPORTANT
-          cancel_on_tap_outside: false,
+          auto_select: false,
         });
       }}
     >
