@@ -100,7 +100,7 @@ function PostPage() {
   const navigate = useNavigate();
 
   const handleAdd = () => {
-    if (companyName == "" || jobrole == "" || experience == "" || link == "") {
+    if (companyName == "" || jobrole == "" || link == "") {
       alert("Fill empty fields!!!");
     }
     if (companyName != "" && jobrole != "" && experience != "" && link != "") {
@@ -132,7 +132,7 @@ function PostPage() {
           <div className="cn">
             <input
               type="text"
-              placeholder="Company Name"
+              placeholder="Company Name (optional)"
               className="input-cn"
               onChange={(e) => SetCompanyName(e.target.value)}
             />
