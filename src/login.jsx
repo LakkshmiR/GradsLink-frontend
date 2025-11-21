@@ -174,7 +174,7 @@ function Login() {
             Login
           </button>
           <hr />
-          <div style={{ width: "350px" }}>
+          <div>
             <GoogleLogin
               theme="filled_blue"
               size="large"
