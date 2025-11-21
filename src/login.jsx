@@ -178,6 +178,7 @@ function Login() {
             theme="filled_blue"
             size="large"
             text="signin_with"
+            useOneTap={false}
             onSuccess={handleGoogleLogin}
             onError={() => console.log("error")}
           />
