@@ -174,14 +174,16 @@ function Login() {
             Login
           </button>
           <hr />
-          <GoogleLogin
-            theme="filled_blue"
-            size="large"
-            text="signin_with"
-            useOneTap={false}
-            onSuccess={handleGoogleLogin}
-            onError={() => console.log("error")}
-          />
+          <div style={{ width: "350px" }}>
+            <GoogleLogin
+              theme="filled_blue"
+              size="large"
+              text="signin_with"
+              useOneTap={false}
+              onSuccess={handleGoogleLogin}
+              onError={() => console.log("error")}
+            />
+          </div>
         </div>
       </div>
     </>
