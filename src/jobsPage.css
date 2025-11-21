@@ -343,6 +343,12 @@ tr:nth-of-type(n) {
   transform: translateY(-2px);
   box-shadow: 0 0 15px #0ef;
 }
+.jobs-subtext {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+}
 @media (max-width: 700px) {
   .heading-jobspage {
     padding-top: 0;
@@ -384,10 +390,7 @@ tr:nth-of-type(n) {
     width: 70px;
     font-size: 12px;
   }
-}
-.jobs-subtext {
-  color: #aaa;
-  font-size: 16px;
-  margin-bottom: 30px;
-  text-align: center;
+  .jobs-subtext {
+    font-size: 14px;
+  }
 }

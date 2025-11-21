@@ -214,7 +214,7 @@ function JobsPage() {
       <Globalclass hidethis={false} />
 
       <h1 className="heading-jobspage">Posted Jobs</h1>
-      <p className="jobs-subtext">Post the Jobs U Apply!!</p>
+      <p className="jobs-subtext">Post the Jobs U Applied for!!</p>
 
       <div className="search-container">
         <input
@@ -313,7 +313,7 @@ export default JobsPage;
 // Some ads or tracking websites don’t see where you came from
 
 //  Final Safe Format
-
+/////////////////////////////////////////////////////////lh///////////////////////////////////////////////
 // import "./jobsPage.css";
 // import axios from "axios";
 // import { useState, useEffect } from "react";
