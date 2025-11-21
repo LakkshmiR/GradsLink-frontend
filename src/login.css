@@ -112,6 +112,9 @@
   display: flex !important;
   justify-content: center !important;
 }
+.google-btn-container iframe {
+  width: 100% !important;
+}
 
 @media (max-width: 1000px) {
   .heading {
