@@ -233,7 +233,7 @@ function JobsPage() {
           <tr>
             <th>Company</th>
             <th>Role</th>
-            {/* <th>Experience</th> */}
+            <th>Experience</th>
             <th>Link</th>
             <th>Posted At</th>
             <th>Posted By</th>
@@ -253,7 +253,7 @@ function JobsPage() {
                 <tr key={company._id}>
                   <td data-cell="companyname">{company.companyName}</td>
                   <td data-cell="role">{company.jobrole}</td>
-                  {/* <td data-cell="experience">{company.experience}</td> */}
+                  <td data-cell="experience">{company.experience}</td>
                   <td data-cell="link">
                     <a
                       href={company.link}
