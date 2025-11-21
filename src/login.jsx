@@ -173,8 +173,11 @@ function Login() {
           <button type="submit" className="login-btn" onClick={handleLogin}>
             Login
           </button>
+          <hr />
           <GoogleLogin
             theme="filled_blue"
+            size="large"
+            text="signin_with"
             onSuccess={handleGoogleLogin}
             onError={() => console.log("error")}
           />
