@@ -109,7 +109,7 @@ function PostPage() {
         .post("https://gradslink-25.onrender.com/add", {
           companyName: companyName,
           jobrole: jobrole,
-          experience: experience,
+          // experience: experience,
           link: link,
           postedBy: postedBy,
         })
@@ -147,14 +147,14 @@ function PostPage() {
             />
           </div>
 
-          <div className="cn">
+          {/* <div className="cn">
             <input
               type="text"
               placeholder="Experience Required"
               className="input-cn"
               onChange={(e) => SetExperience(e.target.value)}
             />
-          </div>
+          </div> */}
 
           <div className="cn">
             <input
