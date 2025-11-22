@@ -165,3 +165,8 @@
     max-width: 100% !important;
   }
 }
+@media (max-width: 350px) {
+  .login-container {
+    padding: 0.5rem;
+  }
+}
