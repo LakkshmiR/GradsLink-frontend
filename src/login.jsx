@@ -174,7 +174,7 @@ function Login() {
             Login
           </button>
           <hr />
-          <div style={{ width: "100%" }} className="google-btn-container">
+          <div style={{ width: "100%" }} className="google-wrapper">
             <GoogleLogin
               theme="filled_blue"
               onSuccess={handleGoogleLogin}
