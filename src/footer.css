@@ -13,6 +13,7 @@
   .footer-style {
     font-size: 10px;
     text-align: center;
-    padding-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
