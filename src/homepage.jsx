@@ -103,7 +103,7 @@ function Homepage() {
               });
               const loggedinuser = localStorage.getItem("name");
               return (
-                <tr key={company._id} className="jb-table-td">
+                <tr key={company._id} className="jb-table-tr">
                   <td data-cell="companyname" className="jb-table-td">
                     {company.companyName}
                   </td>
