@@ -418,15 +418,15 @@ function JobsPage() {
       </div>
 
       <div className="wrapper">
-        <table>
-          <tr>
-            <th>Company</th>
-            <th>Role</th>
-            <th>Experience</th>
-            <th>Link</th>
-            <th>Posted At</th>
-            <th>Posted By</th>
-            <th>Delete</th>
+        <table className="jb-table">
+          <tr className="jb-table-tr">
+            <th className="jb-table-th">Company</th>
+            <th className="jb-table-th">Role</th>
+            <th className="jb-table-th">Experience</th>
+            <th className="jb-table-th">Link</th>
+            <th className="jb-table-th">Posted At</th>
+            <th className="jb-table-th">Posted By</th>
+            <th className="jb-table-th">Delete</th>
           </tr>
           <tbody>
             {jobstoshow.map((company) => {
@@ -439,11 +439,17 @@ function JobsPage() {
               });
               const loggedinuser = localStorage.getItem("name");
               return (
-                <tr key={company._id}>
-                  <td data-cell="companyname">{company.companyName}</td>
-                  <td data-cell="role">{company.jobrole}</td>
-                  <td data-cell="experience">{company.experience}</td>
-                  <td data-cell="link">
+                <tr key={company._id} className="jb-table-tr">
+                  <td className="jb-table-td" data-cell="companyname">
+                    {company.companyName}
+                  </td>
+                  <td data-cell="role" className="jb-table-td">
+                    {company.jobrole}
+                  </td>
+                  <td data-cell="experience" className="jb-table-td">
+                    {company.experience}
+                  </td>
+                  <td data-cell="link" className="jb-table-td">
                     <a
                       href={company.link}
                       target="_blank"
@@ -453,9 +459,13 @@ function JobsPage() {
                       Apply
                     </a>
                   </td>
-                  <td data-cell="postedat">{indianDate}</td>
-                  <td data-cell="postedby">{company.postedBy}</td>
-                  <td data-cell="delete">
+                  <td data-cell="postedat" className="jb-table-td">
+                    {indianDate}
+                  </td>
+                  <td data-cell="postedby" className="jb-table-td">
+                    {company.postedBy}
+                  </td>
+                  <td data-cell="delete" className="jb-table-td">
                     {company.postedBy === loggedinuser ? (
                       <BsTrash onClick={() => handleDelete(company._id)} />
                     ) : (

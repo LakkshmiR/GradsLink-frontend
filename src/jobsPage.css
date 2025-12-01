@@ -272,7 +272,7 @@ tr:nth-of-type(2n) {
   margin-inline: auto;
   font-family: "Poppins", sans-serif;
 }
-table {
+.jb-table {
   width: 70%;
   margin: 0 auto;
   border-collapse: collapse;
@@ -280,16 +280,16 @@ table {
 
   color: white;
 }
-th,
-td {
+.jb-table-th,
+.jb-table-td {
   padding: 1rem;
 }
-th {
+.jb-table-th {
   text-align: left;
   /* background: hsl(0 0% 0% / 0.5); */
   border-bottom: 1px solid #0ef;
 }
-tr:nth-of-type(n) {
+.jb-table-tr:nth-of-type(n) {
   /* background: hsl(0 0% 0% / 0.1); */
   border-bottom: 1px solid #0ef;
 }
@@ -382,25 +382,26 @@ tr:nth-of-type(n) {
   .search-input::placeholder {
     font-size: clamp(12px, 1.5vw, 18px);
   }
-  table {
+  .jb-table {
     width: 100%;
   }
-  th {
+  .jb-table-th {
     display: none;
   }
-  td {
+
+  .jb-table-td:first-child {
+    padding-top: 2rem !important;
+  }
+  .jb-table-td:last-child {
+    padding-bottom: 2rem !important;
+  }
+  .jb-table-td {
     display: grid;
     gap: 0.5rem;
     grid-template-columns: 15ch auto;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem !important;
   }
-  td:first-child {
-    padding-top: 2rem;
-  }
-  td:last-child {
-    padding-bottom: 2rem;
-  }
-  td::before {
+  .jb-table-td::before {
     content: attr(data-cell) ": ";
     font-weight: 700;
     text-transform: capitalize;
