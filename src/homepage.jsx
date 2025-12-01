@@ -84,13 +84,13 @@ function Homepage() {
       </div>
 
       <div className="wrapper">
-        <table>
-          <tr>
-            <th>Company</th>
-            <th>Role</th>
-            <th>Experience</th>
-            <th>Link</th>
-            <th>Posted At</th>
+        <table className="jb-table">
+          <tr className="jb-table-tr">
+            <th className="jb-table-th">Company</th>
+            <th className="jb-table-th">Role</th>
+            <th className="jb-table-th">Experience</th>
+            <th className="jb-table-th">Link</th>
+            <th className="jb-table-th">Posted At</th>
           </tr>
           <tbody>
             {jobstoshow.map((company) => {
@@ -103,16 +103,16 @@ function Homepage() {
               });
               const loggedinuser = localStorage.getItem("name");
               return (
-                <tr key={company._id}>
-                  <td data-cell="companyname">{company.companyName}</td>
-                  <td data-cell="role">{company.jobrole}</td>
-                  <td data-cell="experience">{company.experience}</td>
-                  <td data-cell="link">
+                <tr key={company._id} className="jb-table-tr">
+                  <td data-cell="companyname jb-table-td">{company.companyName}</td>
+                  <td data-cell="role jb-table-td">{company.jobrole}</td>
+                  <td data-cell="experience jb-table-td">{company.experience}</td>
+                  <td data-cell="link jb-table-td">
                     <span rel="noopener noreferrer" className="jobspage-link" onClick={handleClick}>
                       Click Here
                     </span>
                   </td>
-                  <td data-cell="postedat">{indianDate}</td>
+                  <td data-cell="postedat jb-table-td">{indianDate}</td>
                 </tr>
               );
             })}
