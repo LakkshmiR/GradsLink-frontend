@@ -9,6 +9,7 @@ import ForgotPassword from "./forgotPassword";
 import Globalclass from "./globalclass";
 import Homepage from "./homepage";
 import Footer from "./footer";
+import Leaderboard from "./leaderboard";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -42,7 +43,10 @@ export function Router() {
             element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Login />}
           />
           <Route path="/register" element={<Register />} />
+          <Route path="/register/:refcode" element={<Register />} />
+
           <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
         <Footer />
       </HashRouter>

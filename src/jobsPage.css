@@ -349,6 +349,29 @@ tr:nth-of-type(n) {
   margin-bottom: 30px;
   text-align: center;
 }
+.lb-btn-container {
+  text-align: right;
+  padding-bottom: 0.5rem;
+}
+.lb-btn {
+  width: 10%;
+  background: linear-gradient(90deg, #00ffcc, #0099ff);
+  color: black;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  font-size: clamp(14px, 1.2vw, 18px);
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+@media (max-width: 900px) {
+  .lb-btn {
+    width: 130px;
+    padding: 8px;
+  }
+}
 @media (max-width: 700px) {
   .heading-jobspage {
     padding-top: 0;
@@ -392,5 +415,9 @@ tr:nth-of-type(n) {
   }
   .jobs-subtext {
     font-size: 14px;
+  }
+  .lb-btn-container {
+    text-align: center;
+    padding-bottom: 0.5rem;
   }
 }

@@ -22,3 +22,6 @@ body {
     background: #081b29;
   }
 }
+#root {
+  height: 100%;
+}
