@@ -103,16 +103,24 @@ function Homepage() {
               });
               const loggedinuser = localStorage.getItem("name");
               return (
-                <tr key={company._id} className="jb-table-tr">
-                  <td data-cell="companyname jb-table-td">{company.companyName}</td>
-                  <td data-cell="role jb-table-td">{company.jobrole}</td>
-                  <td data-cell="experience jb-table-td">{company.experience}</td>
-                  <td data-cell="link jb-table-td">
+                <tr key={company._id} className="jb-table-td">
+                  <td data-cell="companyname" className="jb-table-td">
+                    {company.companyName}
+                  </td>
+                  <td data-cell="role" className="jb-table-td">
+                    {company.jobrole}
+                  </td>
+                  <td data-cell="experience" className="jb-table-td">
+                    {company.experience}
+                  </td>
+                  <td data-cell="link" className="jb-table-td">
                     <span rel="noopener noreferrer" className="jobspage-link" onClick={handleClick}>
                       Click Here
                     </span>
                   </td>
-                  <td data-cell="postedat jb-table-td">{indianDate}</td>
+                  <td data-cell="postedat" className="jb-table-td">
+                    {indianDate}
+                  </td>
                 </tr>
               );
             })}
