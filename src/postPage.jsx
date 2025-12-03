@@ -21,7 +21,7 @@ function PostPage() {
       const email = localStorage.getItem("email");
 
       axios
-        .post("https://gradslink-25.onrender.com0/add", {
+        .post("https://gradslink-25.onrender.com/add", {
           companyName: companyName,
           jobrole: jobrole,
           experience: experience,
