@@ -165,7 +165,7 @@
 //   const navigate = useNavigate();
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:3000/get")
+//       .get("https://gradslink-25.onrender.com0/get")
 //       .then((result) => {
 //         setcompanys(result.data);
 //         const sortedjobs = result.data.sort((a, b) => {
@@ -178,7 +178,7 @@
 //   const handleDelete = (id) => {
 //     const loggedinuser = localStorage.getItem("name");
 //     axios
-//       .delete("http://localhost:3000/delete/" + id, {
+//       .delete("https://gradslink-25.onrender.com0/delete/" + id, {
 //         data: { loggedinuser: loggedinuser },
 //       })
 //       .then((result) => {
@@ -328,7 +328,7 @@ function JobsPage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/get")
+      .get("https://gradslink-25.onrender.com0/get")
       .then((result) => {
         setcompanys(result.data);
         console.log(result.data);
@@ -343,7 +343,7 @@ function JobsPage() {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3000/delete/" + id, {
+      .delete("https://gradslink-25.onrender.com0/delete/" + id, {
         data: { loggedinuser: loggedinuser },
       })
       .then((result) => {
@@ -376,7 +376,7 @@ function JobsPage() {
   //LEADERBOARD CREATE - LOGGEDIN USER
   useEffect(() => {
     const loggedinEmail = localStorage.getItem("email");
-    axios.post("http://localhost:3000/createlb", {
+    axios.post("https://gradslink-25.onrender.com0/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,
     });
@@ -387,7 +387,7 @@ function JobsPage() {
     const loggedinEmail = localStorage.getItem("email");
 
     axios
-      .post("http://localhost:3000/updateStreak", {
+      .post("https://gradslink-25.onrender.com0/updateStreak", {
         loggedinEmail: loggedinEmail,
         loggedinuser: loggedinuser,
       })

@@ -98,7 +98,7 @@
 //   const navigate = useNavigate();
 //   const handleRegister = () => {
 //     axios
-//       .post("http://localhost:3000/regpost", {
+//       .post("https://gradslink-25.onrender.com0/regpost", {
 //         name: name,
 //         email: email,
 //         password: password,
@@ -189,15 +189,15 @@ function Register() {
   const navigate = useNavigate();
   const handleRegister = () => {
     axios
-      .post("http://localhost:3000/regpost", {
+      .post("https://gradslink-25.onrender.com0/regpost", {
         name: name,
         email: email,
         password: password,
       })
       .then((result) => {
         if (result.data.message == "Registration Success!!!") {
-          axios.post("http://localhost:3000/createrefcode", { email: email });
-          axios.post("http://localhost:3000/updatereferrallb", {
+          axios.post("https://gradslink-25.onrender.com0/createrefcode", { email: email });
+          axios.post("https://gradslink-25.onrender.com0/updatereferrallb", {
             refcode: refcode,
           });
           navigate("/login");
