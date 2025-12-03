@@ -12,14 +12,14 @@ function Globalclass({ hidethis }) {
     localStorage.removeItem("name");
     localStorage.removeItem("email");
 
-    navigate("/login");
+    navigate("/login", { replace: true });
     alert("You are logged out!!");
   };
   //total users
   const [usercount, setusercount] = useState("");
   useEffect(() => {
     axios
-      .get("https://gradslink-25.onrender.com/totalusers")
+      .get("http://localhost:3000/totalusers")
       .then((result) => {
         console.log(result);
         setusercount(result.data);

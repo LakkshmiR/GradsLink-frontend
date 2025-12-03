@@ -12,6 +12,7 @@ import Footer from "./footer";
 import Leaderboard from "./leaderboard";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
+// import Loading from "./loading";
 
 export function Router() {
   return (
@@ -47,6 +48,7 @@ export function Router() {
 
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          {/* <Route path="/loading" element={<Loading />} /> */}
         </Routes>
         <Footer />
       </HashRouter>

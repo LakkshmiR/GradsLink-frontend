@@ -4,12 +4,14 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { Router } from "./Router";
 import { ToastContainer } from "react-toastify";
+// import Loading from "./loading";
 import "react-toastify/dist/ReactToastify.css";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GoogleOAuthProvider clientId="789816508710-pt97v4vabqar5kiea24mkhnqsbgeovhl.apps.googleusercontent.com">
       <Router />
       <ToastContainer />
+      {/* <Loading /> */}
     </GoogleOAuthProvider>
   </StrictMode>
 );

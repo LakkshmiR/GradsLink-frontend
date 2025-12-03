@@ -165,7 +165,7 @@
 //   const navigate = useNavigate();
 //   useEffect(() => {
 //     axios
-//       .get("https://gradslink-25.onrender.com/get")
+//       .get("http://localhost:3000/get")
 //       .then((result) => {
 //         setcompanys(result.data);
 //         const sortedjobs = result.data.sort((a, b) => {
@@ -178,7 +178,7 @@
 //   const handleDelete = (id) => {
 //     const loggedinuser = localStorage.getItem("name");
 //     axios
-//       .delete("https://gradslink-25.onrender.com/delete/" + id, {
+//       .delete("http://localhost:3000/delete/" + id, {
 //         data: { loggedinuser: loggedinuser },
 //       })
 //       .then((result) => {
@@ -328,7 +328,7 @@ function JobsPage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://gradslink-25.onrender.com/get")
+      .get("http://localhost:3000/get")
       .then((result) => {
         setcompanys(result.data);
         console.log(result.data);
@@ -343,11 +343,11 @@ function JobsPage() {
 
   const handleDelete = (id) => {
     axios
-      .delete("https://gradslink-25.onrender.com/delete/" + id, {
+      .delete("http://localhost:3000/delete/" + id, {
         data: { loggedinuser: loggedinuser },
       })
       .then((result) => {
-        alert(result.data);
+        alert("Deleted Successfully!!!");
         location.reload();
       })
       .catch((err) => console.log(err));
@@ -376,7 +376,7 @@ function JobsPage() {
   //LEADERBOARD CREATE - LOGGEDIN USER
   useEffect(() => {
     const loggedinEmail = localStorage.getItem("email");
-    axios.post("https://gradslink-25.onrender.com/createlb", {
+    axios.post("http://localhost:3000/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,
     });
@@ -387,7 +387,7 @@ function JobsPage() {
     const loggedinEmail = localStorage.getItem("email");
 
     axios
-      .post("https://gradslink-25.onrender.com/updateStreak", {
+      .post("http://localhost:3000/updateStreak", {
         loggedinEmail: loggedinEmail,
         loggedinuser: loggedinuser,
       })
