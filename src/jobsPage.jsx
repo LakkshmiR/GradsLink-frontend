@@ -342,9 +342,10 @@ function JobsPage() {
   const loggedinuser = localStorage.getItem("name");
 
   const handleDelete = (id) => {
+    const email = localStorage.getItem("email");
     axios
       .delete("https://gradslink-25.onrender.com/delete/" + id, {
-        data: { loggedinuser: loggedinuser },
+        data: { loggedinuser: loggedinuser, email: email },
       })
       .then((result) => {
         alert("Deleted Successfully!!!");
