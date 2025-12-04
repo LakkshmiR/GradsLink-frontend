@@ -15,6 +15,7 @@ function Leaderboard() {
 
   useEffect(() => {
     axios
+
       .get("https://gradslink-25.onrender.com/getlb")
       .then((result) => {
         setlbdatas(result.data);
