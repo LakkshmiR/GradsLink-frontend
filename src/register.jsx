@@ -197,6 +197,7 @@ function Register() {
       .then((result) => {
         if (result.data.message == "Registration Success!!!") {
           axios.post("https://gradslink-25.onrender.com/createrefcode", { email: email });
+
           axios.post("https://gradslink-25.onrender.com/updatereferrallb", {
             refcode: refcode,
           });

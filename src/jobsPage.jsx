@@ -394,7 +394,25 @@ function JobsPage() {
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   }, []);
+  //get referral code
+  useEffect(() => {
+    const loggedinemail = localStorage.getItem("email");
 
+    if (!loggedinemail) {
+      return;
+    }
+    axios
+      .get("https://gradslink-25.onrender.com/getrefcode", {
+        params: { loggedinemail: loggedinemail },
+      })
+      .then((result) => {
+        if (result.data.referralcode === undefined) {
+          axios.post("https://gradslink-25.onrender.com/createrefcode", { email: loggedinemail });
+        }
+        console.log(result.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Globalclass hidethis={false} />
