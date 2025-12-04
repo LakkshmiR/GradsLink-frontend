@@ -5,7 +5,12 @@ import { toast } from "react-toastify";
 function Leaderboard() {
   const [lbdatas, setlbdatas] = useState([]);
   const [refcode, setRefcode] = useState("");
-  const loggedinemail = localStorage.getItem("email");
+  const [loggedinemail, setLoggedinemail] = useState("");
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    setLoggedinemail(email);
+  }, []);
 
   useEffect(() => {
     axios
