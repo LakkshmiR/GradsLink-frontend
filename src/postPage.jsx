@@ -19,6 +19,7 @@ function PostPage() {
     if (companyName != "" && jobrole != "" && experience != "" && link != "") {
       const postedBy = localStorage.getItem("name");
       const email = localStorage.getItem("email");
+      const token = localStorage.getItem("token");
 
       axios
         .post("https://gradslink-25.onrender.com/add", {
@@ -28,6 +29,7 @@ function PostPage() {
           link: link,
           postedBy: postedBy,
           email: email,
+          token: token,
         })
         .then((result) => {
           navigate("/jobslist");
