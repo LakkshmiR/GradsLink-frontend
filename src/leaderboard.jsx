@@ -9,6 +9,7 @@ function Leaderboard() {
 
   useEffect(() => {
     const email = localStorage.getItem("email");
+    console.log(email);
     setLoggedinemail(email);
   }, []);
 
