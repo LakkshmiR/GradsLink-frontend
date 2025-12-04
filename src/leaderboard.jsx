@@ -19,6 +19,9 @@ function Leaderboard() {
 
   //get referral code
   useEffect(() => {
+    if (!loggedinemail) {
+      return;
+    }
     axios
       .get("https://gradslink-25.onrender.com/getrefcode", {
         params: { loggedinemail: loggedinemail },
@@ -28,7 +31,7 @@ function Leaderboard() {
         console.log(result.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [loggedinemail]);
 
   //copy link
   const copylink = () => {
