@@ -379,9 +379,12 @@ function JobsPage() {
   //LEADERBOARD CREATE - LOGGEDIN USER
   useEffect(() => {
     const loggedinEmail = localStorage.getItem("email");
+    const token = localStorage.getItem("token");
+
     axios.post("https://gradslink-25.onrender.com/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,
+      token: token,
     });
   }, []);
 
