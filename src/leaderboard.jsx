@@ -24,7 +24,7 @@ function Leaderboard() {
         params: { loggedinemail: loggedinemail },
       })
       .then((result) => {
-        setRefcode(result.data);
+        setRefcode(result.data.referralcode);
         console.log(result.data);
       })
       .catch((err) => console.log(err));
