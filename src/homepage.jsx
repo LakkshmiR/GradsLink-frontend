@@ -12,14 +12,14 @@ function Homepage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://gradslink-25.onrender.com0/get")
+      .get("https://gradslink-25.onrender.com/get")
       .then((result) => setcompanys(result.data))
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
     const loggedinuser = localStorage.getItem("name");
     axios
-      .delete("https://gradslink-25.onrender.com0/delete/" + id, {
+      .delete("https://gradslink-25.onrender.com/delete/" + id, {
         data: { loggedinuser: loggedinuser },
       })
       .then((result) => {
