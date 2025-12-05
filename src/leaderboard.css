@@ -44,9 +44,6 @@
 .lb-table-td {
   padding: 1rem;
 }
-.coin {
-  text-align: center;
-}
 .lb-table-th {
   text-align: left;
   /* background: hsl(0 0% 0% / 0.5); */
@@ -56,13 +53,16 @@
   /* background: hsl(0 0% 0% / 0.1); */
   border-bottom: 1px solid #0ef;
 }
+.coin-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
 
 @media (max-width: 700px) {
   .hide-col {
     display: none !important;
-  }
-  .coin {
-    font-size: 12px;
   }
 
   .refer-btn-container {
