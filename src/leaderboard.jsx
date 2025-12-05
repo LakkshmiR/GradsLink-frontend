@@ -2,7 +2,7 @@ import "./leaderboard.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Coin } from "lucide-react";
+
 function Leaderboard() {
   const [lbdatas, setlbdatas] = useState([]);
   const [refcode, setRefcode] = useState("");
@@ -91,9 +91,7 @@ function Leaderboard() {
 
                   <td className="hide-col lb-table-td">{lbdata.referrals}</td>
                   <td className="lb-table-td">
-                    {/* 🪙 */}
-                    <Coin className="coin-icon" />
-
+                    🪙
                     {lbdata.totalPoints}
                   </td>
                 </tr>
