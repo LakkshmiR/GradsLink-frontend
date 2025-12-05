@@ -44,6 +44,9 @@
 .lb-table-td {
   padding: 1rem;
 }
+.coin {
+  text-align: center;
+}
 .lb-table-th {
   text-align: left;
   /* background: hsl(0 0% 0% / 0.5); */
@@ -57,6 +60,9 @@
 @media (max-width: 700px) {
   .hide-col {
     display: none !important;
+  }
+  .coin {
+    font-size: 12px;
   }
 
   .refer-btn-container {

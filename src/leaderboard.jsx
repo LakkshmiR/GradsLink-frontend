@@ -89,7 +89,7 @@ function Leaderboard() {
                   <td className="hide-col lb-table-td">{lbdata.dailyStreak}</td>
 
                   <td className="hide-col lb-table-td">{lbdata.referrals}</td>
-                  <td className="lb-table-td">
+                  <td className="lb-table-td coin">
                     🪙
                     {lbdata.totalPoints}
                   </td>
