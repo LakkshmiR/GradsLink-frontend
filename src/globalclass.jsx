@@ -19,7 +19,7 @@ function Globalclass({ hidethis }) {
   const [usercount, setusercount] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:3000/totalusers")
+      .get("https://gradslink-25.onrender.com/totalusers")
       .then((result) => {
         console.log(result);
         setusercount(result.data);

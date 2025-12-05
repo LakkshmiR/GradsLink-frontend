@@ -70,7 +70,7 @@
 //   const handleReset = () => {
 //     if (registeremail != "" && newpw != "") {
 //       axios
-//         .post("http://localhost:3000/forgotpw", {
+//         .post("https://gradslink-25.onrender.com/forgotpw", {
 //           registeremail: registeremail,
 //           newpw: newpw,
 //         })
@@ -133,7 +133,7 @@ function ForgotPassword() {
   const handleReset = () => {
     if (registeremail != "" && newpw != "") {
       axios
-        .post("http://localhost:3000/forgotpw", {
+        .post("https://gradslink-25.onrender.com/forgotpw", {
           registeremail: registeremail,
           newpw: newpw,
         })

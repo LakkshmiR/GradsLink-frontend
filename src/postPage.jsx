@@ -22,7 +22,7 @@ function PostPage() {
       const token = localStorage.getItem("token");
 
       axios
-        .post("http://localhost:3000/add", {
+        .post("https://gradslink-25.onrender.com/add", {
           companyName: companyName,
           jobrole: jobrole,
           experience: experience,
