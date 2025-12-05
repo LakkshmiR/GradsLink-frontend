@@ -95,7 +95,7 @@
 //   const navigate = useNavigate();
 //   const handleLogin = () => {
 //     axios
-//       .post("https://gradslink-25.onrender.com/login", {
+//       .post("http://localhost:3000/login", {
 //         loginemail: loginemail,
 //         loginpw: loginpw,
 //       })
@@ -117,7 +117,7 @@
 //   //google login
 //   const handleGoogleLogin = (credentialResponse) => {
 //     axios
-//       .post("https://gradslink-25.onrender.com/google", {
+//       .post("http://localhost:3000/google", {
 //         credential: credentialResponse.credential,
 //       })
 //       .then((result) => {
@@ -204,7 +204,7 @@ function Login() {
   const navigate = useNavigate();
   const handleLogin = () => {
     axios
-      .post("https://gradslink-25.onrender.com/login", {
+      .post("http://localhost:3000/login", {
         loginemail: loginemail,
         loginpw: loginpw,
       })
@@ -227,7 +227,7 @@ function Login() {
   }, []);
   const handleGoogleLogin = (credentialResponse) => {
     axios
-      .post("https://gradslink-25.onrender.com/google", {
+      .post("http://localhost:3000/google", {
         credential: credentialResponse.credential,
       })
       .then((result) => {
