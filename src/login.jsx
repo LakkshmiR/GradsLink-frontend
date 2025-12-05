@@ -95,7 +95,7 @@
 //   const navigate = useNavigate();
 //   const handleLogin = () => {
 //     axios
-//       .post("https://gradslink-25.onrender.com/login", {
+//       .post("https://gradslink-25.onrender.com0/login", {
 //         loginemail: loginemail,
 //         loginpw: loginpw,
 //       })
@@ -117,7 +117,7 @@
 //   //google login
 //   const handleGoogleLogin = (credentialResponse) => {
 //     axios
-//       .post("https://gradslink-25.onrender.com/google", {
+//       .post("https://gradslink-25.onrender.com0/google", {
 //         credential: credentialResponse.credential,
 //       })
 //       .then((result) => {
@@ -204,7 +204,7 @@ function Login() {
   const navigate = useNavigate();
   const handleLogin = () => {
     axios
-      .post("https://gradslink-25.onrender.com/login", {
+      .post("https://gradslink-25.onrender.com0/login", {
         loginemail: loginemail,
         loginpw: loginpw,
       })
@@ -213,6 +213,7 @@ function Login() {
           localStorage.setItem("token", result.data.token);
           localStorage.setItem("name", result.data.name);
           localStorage.setItem("email", result.data.email);
+          localStorage.setItem("isLoggedin", true);
           const name = result.data.name;
           navigate("/jobslist", { replace: true });
         } else {
@@ -227,7 +228,7 @@ function Login() {
   }, []);
   const handleGoogleLogin = (credentialResponse) => {
     axios
-      .post("https://gradslink-25.onrender.com/google", {
+      .post("https://gradslink-25.onrender.com0/google", {
         credential: credentialResponse.credential,
       })
       .then((result) => {

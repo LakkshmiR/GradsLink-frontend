@@ -165,7 +165,7 @@
 //   const navigate = useNavigate();
 //   useEffect(() => {
 //     axios
-//       .get("https://gradslink-25.onrender.com/get")
+//       .get("https://gradslink-25.onrender.com0/get")
 //       .then((result) => {
 //         setcompanys(result.data);
 //         const sortedjobs = result.data.sort((a, b) => {
@@ -178,7 +178,7 @@
 //   const handleDelete = (id) => {
 //     const loggedinuser = localStorage.getItem("name");
 //     axios
-//       .delete("https://gradslink-25.onrender.com/delete/" + id, {
+//       .delete("https://gradslink-25.onrender.com0/delete/" + id, {
 //         data: { loggedinuser: loggedinuser },
 //       })
 //       .then((result) => {
@@ -328,7 +328,7 @@ function JobsPage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://gradslink-25.onrender.com/get")
+      .get("https://gradslink-25.onrender.com0/get")
       .then((result) => {
         setcompanys(result.data);
         console.log(result.data);
@@ -345,7 +345,7 @@ function JobsPage() {
     const email = localStorage.getItem("email");
     const token = localStorage.getItem("token");
     axios
-      .delete("https://gradslink-25.onrender.com/delete/" + id, {
+      .delete("https://gradslink-25.onrender.com0/delete/" + id, {
         data: { loggedinuser: loggedinuser, email: email, token: token },
       })
       .then((result) => {
@@ -380,7 +380,7 @@ function JobsPage() {
     const loggedinEmail = localStorage.getItem("email");
     const token = localStorage.getItem("token");
 
-    axios.post("https://gradslink-25.onrender.com/createlb", {
+    axios.post("https://gradslink-25.onrender.com0/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,
       token: token,
@@ -392,7 +392,7 @@ function JobsPage() {
     const loggedinEmail = localStorage.getItem("email");
 
     axios
-      .post("https://gradslink-25.onrender.com/updateStreak", {
+      .post("https://gradslink-25.onrender.com0/updateStreak", {
         loggedinEmail: loggedinEmail,
         loggedinuser: loggedinuser,
       })
@@ -407,12 +407,12 @@ function JobsPage() {
       return;
     }
     axios
-      .get("https://gradslink-25.onrender.com/getrefcode", {
+      .get("https://gradslink-25.onrender.com0/getrefcode", {
         params: { loggedinemail: loggedinemail },
       })
       .then((result) => {
         if (result.data.referralcode === undefined) {
-          axios.post("https://gradslink-25.onrender.com/createrefcode", { email: loggedinemail });
+          axios.post("https://gradslink-25.onrender.com0/createrefcode", { email: loggedinemail });
         }
         console.log(result.data);
       })
