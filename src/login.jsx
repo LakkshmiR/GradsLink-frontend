@@ -213,7 +213,6 @@ function Login() {
           localStorage.setItem("token", result.data.token);
           localStorage.setItem("name", result.data.name);
           localStorage.setItem("email", result.data.email);
-          localStorage.setItem("isLoggedin", true);
           const name = result.data.name;
           navigate("/jobslist", { replace: true });
         } else {

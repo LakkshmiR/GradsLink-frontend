@@ -326,6 +326,10 @@ function JobsPage() {
 
   const [searchtext, setSearchtext] = useState("");
   const navigate = useNavigate();
+  const email = localStorage.getItem("email");
+  if (!email) {
+    navigate("/login");
+  }
   useEffect(() => {
     axios
       .get("https://gradslink-25.onrender.com/get")
@@ -379,7 +383,6 @@ function JobsPage() {
   useEffect(() => {
     const loggedinEmail = localStorage.getItem("email");
     const token = localStorage.getItem("token");
-
     axios.post("https://gradslink-25.onrender.com/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,

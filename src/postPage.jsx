@@ -20,7 +20,6 @@ function PostPage() {
       const postedBy = localStorage.getItem("name");
       const email = localStorage.getItem("email");
       const token = localStorage.getItem("token");
-
       axios
         .post("https://gradslink-25.onrender.com/add", {
           companyName: companyName,
