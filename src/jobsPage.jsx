@@ -329,9 +329,6 @@ function JobsPage() {
   const email = localStorage.getItem("email");
 
   useEffect(() => {
-    if (!email) {
-      navigate("/login");
-    }
     axios
       .get("https://gradslink-25.onrender.com/get")
       .then((result) => {
