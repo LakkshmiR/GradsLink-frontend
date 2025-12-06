@@ -331,6 +331,7 @@ function JobsPage() {
     if (!email) {
       navigate("/login");
     }
+    return;
   }, []);
 
   useEffect(() => {
