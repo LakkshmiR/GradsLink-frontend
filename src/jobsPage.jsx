@@ -330,6 +330,7 @@ function JobsPage() {
     const email = localStorage.getItem("email");
     if (!email) {
       localStorage.clear();
+      navigate("/login");
     }
   }, []);
   useEffect(() => {

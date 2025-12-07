@@ -13,6 +13,7 @@ function Globalclass({ hidethis }) {
     localStorage.removeItem("email");
     alert("You are logged out!!");
     location.reload();
+
     navigate("/login", { replace: true });
   };
   //total users
