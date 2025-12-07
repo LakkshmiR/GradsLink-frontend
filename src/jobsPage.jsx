@@ -326,8 +326,12 @@ function JobsPage() {
 
   const [searchtext, setSearchtext] = useState("");
   const navigate = useNavigate();
-  const email = localStorage.getItem("email");
-
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    if (!email) {
+      localStorage.clear();
+    }
+  }, []);
   useEffect(() => {
     axios
       .get("https://gradslink-25.onrender.com/get")
