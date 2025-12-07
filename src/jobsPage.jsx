@@ -331,6 +331,7 @@ function JobsPage() {
     if (!email) {
       localStorage.clear();
       navigate("/login");
+      location.reload();
     }
   }, []);
   useEffect(() => {
