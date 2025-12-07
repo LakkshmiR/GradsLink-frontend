@@ -233,6 +233,8 @@ function Login() {
       .then((result) => {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("name", result.data.name);
+        localStorage.setItem("email", result.data.email);
+
         console.log("You are google logged in", result.data);
         navigate("/jobslist", { replace: true });
       })
