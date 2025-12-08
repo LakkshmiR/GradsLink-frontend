@@ -320,6 +320,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
 import Globalclass from "./globalclass";
+import Loading from "./loading";
 function JobsPage() {
   const [companys, setcompanys] = useState([]);
   const [jobs, setJobs] = useState([]);
@@ -425,106 +426,125 @@ function JobsPage() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  ///loading part
+  const [showloading, setShowloading] = useState(true);
+  useEffect(() => {
+    axios
+      .get("https://gradslink-25.onrender.com/health")
+      .then((result) => {
+        console.log(result.data);
+        if (result.data.status === "ok") {
+          setShowloading(false);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
-      <Globalclass hidethis={false} />
-      <div className="lb-btn-container">
-        <button className="lb-btn" onClick={() => navigate("/leaderboard")}>
-          LeaderBoard
-        </button>
-      </div>
-      <h1 className="heading-jobspage">Posted Jobs</h1>
+      {showloading && <Loading />}
+      {!showloading && (
+        <div>
+          <Globalclass hidethis={false} />
+          <div className="lb-btn-container">
+            <button className="lb-btn" onClick={() => navigate("/leaderboard")}>
+              LeaderBoard
+            </button>
+          </div>
+          <h1 className="heading-jobspage">Posted Jobs</h1>
 
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search role here..."
-          className="search-input"
-          onChange={(e) => setSearchtext(e.target.value)}
-        />
-        <button type="submit" className="postbtn-jobspage" onClick={() => navigate("/postjob")}>
-          Post +
-        </button>
-      </div>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search role here..."
+              className="search-input"
+              onChange={(e) => setSearchtext(e.target.value)}
+            />
+            <button type="submit" className="postbtn-jobspage" onClick={() => navigate("/postjob")}>
+              Post +
+            </button>
+          </div>
 
-      <div className="wrapper">
-        <table className="jb-table">
-          <tr className="jb-table-tr">
-            <th className="jb-table-th">Company</th>
-            <th className="jb-table-th">Role</th>
-            <th className="jb-table-th">Experience</th>
-            <th className="jb-table-th">Link</th>
-            <th className="jb-table-th">Posted At</th>
-            <th className="jb-table-th">Posted By</th>
-            <th className="jb-table-th">Delete</th>
-          </tr>
-          <tbody>
-            {jobstoshow.map((company) => {
-              const dateObj = new Date(company.postedAt);
-              const indianDate = dateObj.toLocaleDateString("en-IN", {
-                timeZone: "Asia/Kolkata",
-              });
-              const indianTime = dateObj.toLocaleTimeString("en-IN", {
-                timeZone: "Asia/Kolkata",
-              });
-              const loggedinuser = localStorage.getItem("name");
-              return (
-                <tr key={company._id} className="jb-table-tr">
-                  <td className="jb-table-td" data-cell="companyname">
-                    {company.companyName}
-                  </td>
-                  <td data-cell="role" className="jb-table-td">
-                    {company.jobrole}
-                  </td>
-                  <td data-cell="experience" className="jb-table-td">
-                    {company.experience}
-                  </td>
-                  <td data-cell="link" className="jb-table-td">
-                    <a
-                      href={company.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="jobspage-link"
-                    >
-                      Apply
-                    </a>
-                  </td>
-                  <td data-cell="postedat" className="jb-table-td">
-                    {indianDate}
-                  </td>
-                  <td data-cell="postedby" className="jb-table-td">
-                    {company.postedBy}
-                  </td>
-                  <td data-cell="delete" className="jb-table-td">
-                    {company.postedBy === loggedinuser ? (
-                      <BsTrash onClick={() => handleDelete(company._id)} />
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+          <div className="wrapper">
+            <table className="jb-table">
+              <tr className="jb-table-tr">
+                <th className="jb-table-th">Company</th>
+                <th className="jb-table-th">Role</th>
+                <th className="jb-table-th">Experience</th>
+                <th className="jb-table-th">Link</th>
+                <th className="jb-table-th">Posted At</th>
+                <th className="jb-table-th">Posted By</th>
+                <th className="jb-table-th">Delete</th>
+              </tr>
+              <tbody>
+                {jobstoshow.map((company) => {
+                  const dateObj = new Date(company.postedAt);
+                  const indianDate = dateObj.toLocaleDateString("en-IN", {
+                    timeZone: "Asia/Kolkata",
+                  });
+                  const indianTime = dateObj.toLocaleTimeString("en-IN", {
+                    timeZone: "Asia/Kolkata",
+                  });
+                  const loggedinuser = localStorage.getItem("name");
+                  return (
+                    <tr key={company._id} className="jb-table-tr">
+                      <td className="jb-table-td" data-cell="companyname">
+                        {company.companyName}
+                      </td>
+                      <td data-cell="role" className="jb-table-td">
+                        {company.jobrole}
+                      </td>
+                      <td data-cell="experience" className="jb-table-td">
+                        {company.experience}
+                      </td>
+                      <td data-cell="link" className="jb-table-td">
+                        <a
+                          href={company.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="jobspage-link"
+                        >
+                          Apply
+                        </a>
+                      </td>
+                      <td data-cell="postedat" className="jb-table-td">
+                        {indianDate}
+                      </td>
+                      <td data-cell="postedby" className="jb-table-td">
+                        {company.postedBy}
+                      </td>
+                      <td data-cell="delete" className="jb-table-td">
+                        {company.postedBy === loggedinuser ? (
+                          <BsTrash onClick={() => handleDelete(company._id)} />
+                        ) : (
+                          "-"
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
 
-      <div className="jobspage-wholebtn">
-        <button
-          onClick={() => setCurrentPage(currentpage - 1)}
-          disabled={currentpage === 1}
-          className="prevnext-btn"
-        >
-          Previous
-        </button>
-        <button
-          onClick={() => setCurrentPage(currentpage + 1)}
-          disabled={currentpage === totalpages}
-          className="prevnext-btn"
-        >
-          Next
-        </button>
-      </div>
+          <div className="jobspage-wholebtn">
+            <button
+              onClick={() => setCurrentPage(currentpage - 1)}
+              disabled={currentpage === 1}
+              className="prevnext-btn"
+            >
+              Previous
+            </button>
+            <button
+              onClick={() => setCurrentPage(currentpage + 1)}
+              disabled={currentpage === totalpages}
+              className="prevnext-btn"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

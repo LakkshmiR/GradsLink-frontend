@@ -1,0 +1,22 @@
+.loading-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 1rem;
+}
+.loading-p {
+  font-size: clamp(18px, 2.3vw, 26px);
+  text-align: center;
+}
+.loading {
+  color: yellow;
+  font-size: clamp(12px, 2.3vw, 20px);
+  text-align: center;
+}
+.loading-heading {
+  font-size: clamp(25px, 2.3vw, 40px);
+  text-align: center;
+}
