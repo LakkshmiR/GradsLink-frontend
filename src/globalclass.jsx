@@ -12,7 +12,7 @@ function Globalclass({ hidethis }) {
     localStorage.removeItem("name");
     localStorage.removeItem("email");
     alert("You are logged out!!");
-    location.reload();
+    // location.reload();
 
     navigate("/login", { replace: true });
   };
