@@ -440,9 +440,9 @@ function JobsPage() {
       })
       .catch((err) => console.log(err));
   }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
   return (
     <>
       {showloading && <Loading />}
@@ -539,7 +539,10 @@ function JobsPage() {
               Previous
             </button>
             <button
-              onClick={() => setCurrentPage(currentpage + 1)}
+              onClick={() => {
+                setCurrentPage(currentpage + 1);
+                window.scrollTo(0, 0);
+              }}
               disabled={currentpage === totalpages}
               className="prevnext-btn"
             >
