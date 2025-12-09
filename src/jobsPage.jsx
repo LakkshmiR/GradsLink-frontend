@@ -532,7 +532,10 @@ function JobsPage() {
 
           <div className="jobspage-wholebtn">
             <button
-              onClick={() => setCurrentPage(currentpage - 1)}
+              onClick={() => {
+                setCurrentPage(currentpage - 1);
+                window.scrollTo(0, 0);
+              }}
               disabled={currentpage === 1}
               className="prevnext-btn"
             >
