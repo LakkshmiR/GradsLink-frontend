@@ -1,9 +1,10 @@
 .lb-header {
 }
 .whole-leaderboard {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   overflow-y: visible;
   width: 100%;
+  height: auto;
 }
 
 .leaderboard-heading {
