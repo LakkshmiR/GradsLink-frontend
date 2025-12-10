@@ -2,7 +2,7 @@
 }
 .whole-leaderboard {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
   width: 100%;
 }
 
