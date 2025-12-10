@@ -5,6 +5,7 @@
   overflow-y: visible;
   width: 100%;
   height: auto;
+  margin-bottom: 1rem;
 }
 
 .leaderboard-heading {
