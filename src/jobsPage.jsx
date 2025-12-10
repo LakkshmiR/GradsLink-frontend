@@ -454,7 +454,7 @@ function JobsPage() {
               LeaderBoard
             </button>
           </div>
-          <h1 className="heading-jobspage">Posted Jobs</h1>
+          <h1 className="heading-jobspage">Posted Jobs[Post the jobs u have applied for]</h1>
 
           <div className="search-container">
             <input
