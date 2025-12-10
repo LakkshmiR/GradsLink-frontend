@@ -1,5 +1,10 @@
 .lb-header {
 }
+.whole-leaderboard {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
 
 .leaderboard-heading {
   text-align: center;

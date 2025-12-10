@@ -54,51 +54,53 @@ function Leaderboard() {
 
   return (
     <>
-      <div className="lb-header">
-        <div>
-          <h1 className="leaderboard-heading ">GRADSLINK LEADERBOARD</h1>
+      <div className="whole-leaderboard">
+        <div className="lb-header">
+          <div>
+            <h1 className="leaderboard-heading ">GRADSLINK LEADERBOARD</h1>
+          </div>
+          <br />
+          <div className="refer-btn-container">
+            <button onClick={copylink} className="refer-btn">
+              Refer a friend
+            </button>
+          </div>
         </div>
         <br />
-        <div className="refer-btn-container">
-          <button onClick={copylink} className="refer-btn">
-            Refer a friend
-          </button>
+
+        <div className="lb-wrapper">
+          <table className="lb-table">
+            <thead>
+              <tr className="lb-table-tr">
+                <th className="lb-table-th">Rank</th>
+                <th className="lb-table-th">Name</th>
+                <th className="hide-col lb-table-th">Job Posts(10)</th>
+                <th className="hide-col lb-table-th">Daily Streak(5)</th>
+
+                <th className="hide-col lb-table-th">Referrals(50)</th>
+                <th className="lb-table-th">Total Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lbdatas.map((lbdata) => {
+                return (
+                  <tr key={lbdata._id} className="lb-table-tr">
+                    <td className="lb-table-td">{lbdata.rank}</td>
+                    <td className="lb-table-td">{lbdata.name}</td>
+                    <td className="hide-col lb-table-td">{lbdata.numJobPosts}</td>
+                    <td className="hide-col lb-table-td">{lbdata.dailyStreak}</td>
+
+                    <td className="hide-col lb-table-td">{lbdata.referrals}</td>
+                    <td className="lb-table-td">
+                      🪙
+                      {lbdata.totalPoints}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
-      </div>
-      <br />
-
-      <div className="lb-wrapper">
-        <table className="lb-table">
-          <thead>
-            <tr className="lb-table-tr">
-              <th className="lb-table-th">Rank</th>
-              <th className="lb-table-th">Name</th>
-              <th className="hide-col lb-table-th">Job Posts(10)</th>
-              <th className="hide-col lb-table-th">Daily Streak(5)</th>
-
-              <th className="hide-col lb-table-th">Referrals(50)</th>
-              <th className="lb-table-th">Total Points</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lbdatas.map((lbdata) => {
-              return (
-                <tr key={lbdata._id} className="lb-table-tr">
-                  <td className="lb-table-td">{lbdata.rank}</td>
-                  <td className="lb-table-td">{lbdata.name}</td>
-                  <td className="hide-col lb-table-td">{lbdata.numJobPosts}</td>
-                  <td className="hide-col lb-table-td">{lbdata.dailyStreak}</td>
-
-                  <td className="hide-col lb-table-td">{lbdata.referrals}</td>
-                  <td className="lb-table-td">
-                    🪙
-                    {lbdata.totalPoints}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
       </div>
     </>
   );
