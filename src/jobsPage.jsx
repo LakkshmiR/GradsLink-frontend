@@ -349,6 +349,7 @@ function JobsPage() {
       .catch((err) => console.log(err));
   }, []);
   const loggedinuser = localStorage.getItem("name");
+  const deleteemail = localStorage.getItem("email");
 
   const handleDelete = (id) => {
     const email = localStorage.getItem("email");
@@ -517,7 +518,7 @@ function JobsPage() {
                         {company.postedBy}
                       </td>
                       <td data-cell="delete" className="jb-table-td">
-                        {company.postedBy === loggedinuser ? (
+                        {company.email === deleteemail ? (
                           <BsTrash onClick={() => handleDelete(company._id)} />
                         ) : (
                           "-"

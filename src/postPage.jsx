@@ -11,13 +11,15 @@ function PostPage() {
   const [link, SetLink] = useState("");
   const navigate = useNavigate();
   const loggedinuser = localStorage.getItem("name");
+  const [anonymous, setAnonymous] = useState(false);
 
   const handleAdd = () => {
     if (companyName == "" || jobrole == "" || experience == "" || link == "") {
       alert("Fill empty fields!!!");
+      return;
     }
     if (companyName != "" && jobrole != "" && experience != "" && link != "") {
-      const postedBy = localStorage.getItem("name");
+      const postedBy = anonymous ? "anonymous" : localStorage.getItem("name");
       const email = localStorage.getItem("email");
       const token = localStorage.getItem("token");
       axios
@@ -81,6 +83,13 @@ function PostPage() {
               onChange={(e) => SetLink(e.target.value)}
             />
           </div>
+          <label className="anonymous-cls">
+            <input type="checkbox" onChange={() => setAnonymous(true)} />
+            Post as Anonymous?
+          </label>
+
+          <br />
+          <br />
 
           <button type="submit" className="post-btn" onClick={handleAdd}>
             Post
