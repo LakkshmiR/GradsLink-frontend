@@ -86,7 +86,7 @@
   .main.small .sidebar-navlink {
     /* transform: scale(1.05);
     transition: transform 0.5s ease; */
-    transform:none
+    transform: none;
     width: 220px;
     margin-left: 8px;
   }
