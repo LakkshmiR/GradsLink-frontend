@@ -312,7 +312,7 @@
     top: clamp(4rem, 8vw, 6rem);
     left: 0;
     height: calc(100vh - clamp(4rem, 8vw, 6rem));
-    width: 220px;
+    width: 240px;
     z-index: 1000;
     background: linear-gradient(180deg, #010a13, #06263d);
     transform: translateX(-150%);
