@@ -319,7 +319,7 @@
     transition: transform 0.3s ease;
   }
   .sidebarce.collapsed {
-    width: 200px;
+    width: 190px;
     transform: translateX(0);
   }
   .belowTitleBarContainer {
