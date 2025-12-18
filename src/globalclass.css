@@ -312,14 +312,14 @@
     top: clamp(4rem, 8vw, 6rem);
     left: 0;
     height: calc(100vh - clamp(4rem, 8vw, 6rem));
-    width: 150px;
+    width: 220px;
     z-index: 1000;
     background: linear-gradient(180deg, #010a13, #06263d);
     transform: translateX(-150%);
     transition: transform 0.3s ease;
   }
   .sidebarce.collapsed {
-    width: 270px;
+    width: 200px;
     transform: translateX(0);
   }
   .belowTitleBarContainer {
