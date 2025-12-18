@@ -78,7 +78,7 @@
 }
 @media (max-width: 700px) {
   .menu {
-    top: 5 !important;
+    top: -5 !important;
   }
   .main.small .sidebar-element {
     display: block;
