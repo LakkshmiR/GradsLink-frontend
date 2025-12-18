@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background: radial-gradient(circle at top left, rgba(0, 238, 255, 0.2), transparent 70%), #081b29;
+  /* background: radial-gradient(circle at top left, rgba(0, 238, 255, 0.2), transparent 70%), #081b29; */
+  background: #081b29;
   min-height: 100vh;
 }
 ::-webkit-scrollbar {

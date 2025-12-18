@@ -57,7 +57,7 @@ function Leaderboard() {
       <div className="whole-leaderboard">
         <div className="lb-header">
           <div>
-            <h1 className="leaderboard-heading ">GRADSLINK LEADERBOARD</h1>
+            <h1 className="leaderboard-heading ">LEADERBOARD</h1>
           </div>
           <br />
           <div className="refer-btn-container">

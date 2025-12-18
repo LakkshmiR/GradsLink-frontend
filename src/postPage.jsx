@@ -42,7 +42,6 @@ function PostPage() {
 
   return (
     <>
-      <Globalclass />
       <div className="postpage-container">
         <div className="post-wrapper">
           <h1 className="heading">Post a Job 🚀</h1>
@@ -91,7 +90,7 @@ function PostPage() {
           <br />
           <br />
 
-          <button type="submit" className="post-btn" onClick={handleAdd}>
+          <button type="button" className="post-btn" onClick={handleAdd}>
             Post
           </button>
         </div>

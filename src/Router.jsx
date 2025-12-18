@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import PostPage from "./postPage";
 import JobsPage from "./jobsPage";
@@ -6,23 +6,27 @@ import Login from "./login";
 import Register from "./register";
 import ProtectedRoute from "./protectedRoute";
 import ForgotPassword from "./forgotPassword";
-import Globalclass from "./globalclass";
 import Homepage from "./homepage";
 import Footer from "./footer";
 import Leaderboard from "./leaderboard";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Loading from "./loading";
+import Globalclass from "./globalclass";
+
+// import Sidebar from "./sidebar";
 
 export function Router() {
+  const location = useLocation();
   return (
     <>
-      <HashRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Homepage />}
-          />
+      {/* <HashRouter> */}
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Homepage />}
+        />
+        <Route element={<Globalclass hidethis={false} />}>
           <Route
             path="/postjob"
             element={
@@ -40,18 +44,28 @@ export function Router() {
             }
           />
           <Route
-            path="/login"
-            element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Login />}
+            path="/leaderboard"
+            element={
+              <ProtectedRoute>
+                <Leaderboard />
+              </ProtectedRoute>
+            }
           />
-          <Route path="/register" element={<Register />} />
-          <Route path="/register/:refcode" element={<Register />} />
+        </Route>
+        <Route
+          path="/login"
+          element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Login />}
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/register/:refcode" element={<Register />} />
 
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/loading" element={<Loading />} />
-        </Routes>
-        <Footer />
-      </HashRouter>
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+
+        <Route path="/loading" element={<Loading />} />
+        {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+      </Routes>
+      <Footer />
+      {/* </HashRouter> */}
     </>
   );
 }

@@ -240,6 +240,9 @@ tr:nth-of-type(2n) {
   }
 } */
 /* #################################################################################################3 */
+.whole-jobspage {
+  margin-top: 1rem;
+}
 .heading-jobspage {
   text-align: center;
   color: #fff;
@@ -270,13 +273,15 @@ tr:nth-of-type(2n) {
 .wrapper {
   width: min(900px, 100%-3rem);
   margin-inline: auto;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 .jb-table {
   width: 70%;
   margin: 0 auto;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.05);
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  letter-spacing: 0.4px;
 
   color: white;
 }

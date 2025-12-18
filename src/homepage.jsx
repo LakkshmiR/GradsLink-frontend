@@ -77,7 +77,7 @@ function Homepage() {
       {!showloading && (
         <div>
           <div className="homepage-header">
-            <Globalclass hidethis={true} />
+            {/* <Globalclass hidethis={true} /> */}
             <div className="homepage-userbtn">
               <button className="loginbtn-homepage" onClick={() => navigate("/login")}>
                 Login

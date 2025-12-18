@@ -9,7 +9,8 @@
 
 .leaderboard-heading {
   text-align: center;
-  color: #fff;
+  color: #0ef;
+  text-shadow: 0 0 25px#0ef;
   padding: 0;
   margin: 0;
   font-size: clamp(1.4rem, 4vw, 2rem);
@@ -36,14 +37,14 @@
 .lb-wrapper {
   width: min(900px, 100%-3rem);
   margin-inline: auto;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 .lb-table {
   width: 70%;
   margin: 0 auto;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.05);
-
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   color: white;
   margin-bottom: 3rem;
 }
