@@ -12,9 +12,10 @@
   border: 1px solid #0ef;
   box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);
   border-radius: 20px;
-  padding: 40px 50px;
+  padding: 40px 50px !important;
   /* width: 350px; */
-  width: clamp(16rem, 5vw + 15rem, 21.875rem);
+  /* width: clamp(16rem, 5vw + 15rem, 21.875rem); */
+  width: 400px;
 
   text-align: center;
   backdrop-filter: blur(10px);

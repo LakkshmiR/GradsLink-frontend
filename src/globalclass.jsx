@@ -108,7 +108,7 @@ function Globalclass({ hidethis }) {
               GradsLink
             </div>
             <div className="profileposition username">
-              <p className="profile proname">{loggedinuser}</p>
+              <p className="profile proname">Duvvada Jaganadham triventi</p>
               {/* <img></img> */}
             </div>
           </div>

@@ -5,6 +5,15 @@ import { useState } from "react";
 
 function Sidebar({ shrink }) {
   const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    alert("You are logged out!!");
+    // location.reload();
+
+    navigate("/login", { replace: true });
+  };
 
   return (
     <>
@@ -44,6 +53,17 @@ function Sidebar({ shrink }) {
                   <li className="sidebar-li">
                     <i className="fa-solid fa-trophy sidebar-icon"></i>
                     <span className="sidebar-element ">Leaderboard</span>
+                  </li>
+                </NavLink>
+                <NavLink
+                  // to="/leaderboard"
+                  className={(info) =>
+                    info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
+                  }
+                >
+                  <li className="sidebar-li" onClick={() => handleLogout()}>
+                    <i className="fa-solid fa-trophy sidebar-icon"></i>
+                    <span className="sidebar-element ">Logout</span>
                   </li>
                 </NavLink>
               </ul>

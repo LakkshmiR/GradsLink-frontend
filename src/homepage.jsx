@@ -75,9 +75,10 @@ function Homepage() {
     <>
       {showloading && <Loading />}
       {!showloading && (
-        <div>
+        <div className="whole-homepage">
           <div className="homepage-header">
             {/* <Globalclass hidethis={true} /> */}
+            <div className="homepage-logo">GradsLink</div>
             <div className="homepage-userbtn">
               <button className="loginbtn-homepage" onClick={() => navigate("/login")}>
                 Login

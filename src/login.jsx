@@ -289,7 +289,10 @@ function Login() {
             Login
           </button>
           {/* google login */}
+          <br />
+          <br />
           <hr />
+          <br />
           <GoogleLogin
             theme="filled_blue"
             onSuccess={handleGoogleLogin}
