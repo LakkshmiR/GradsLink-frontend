@@ -83,7 +83,11 @@ function PostPage() {
             />
           </div>
           <label className="anonymous-cls">
-            <input type="checkbox" onChange={() => setAnonymous(true)} />
+            <input
+              type="checkbox"
+              onChange={() => setAnonymous(true)}
+              className="anonymous-check"
+            />
             Post as Anonymous?
           </label>
 
