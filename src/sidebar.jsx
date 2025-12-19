@@ -56,7 +56,7 @@ function Sidebar({ shrink }) {
                   </li>
                 </NavLink>
                 <NavLink
-                  // to="/leaderboard"
+                  to=""
                   className={(info) =>
                     info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
                   }
