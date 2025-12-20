@@ -56,14 +56,14 @@ function Sidebar({ shrink }) {
                   </li>
                 </NavLink>
                 <NavLink
-                  to=""
+                  to="/login"
                   className={(info) =>
                     info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
                   }
                 >
                   <li className="sidebar-li" onClick={() => handleLogout()}>
-                    <i className="fa-solid fa-trophy sidebar-icon"></i>
-                    <span className="sidebar-element ">Logout</span>
+                    <i className="fa-solid fa-right-from-bracket sidebar-icon"></i>
+                    <span className="sidebar-element-logout">Logout</span>
                   </li>
                 </NavLink>
               </ul>

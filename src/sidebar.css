@@ -31,10 +31,19 @@
   border: none;
   outline: none;
   color: #fff;
-
-  /* font-size: 19px; */
   font-size: clamp(0.95rem, 1.6vw, 1.1875rem);
-
+  padding-left: 10px;
+  letter-spacing: 1px;
+  font-family: none;
+  text-decoration: none !important;
+}
+.sidebar-element-logout {
+  background: none;
+  border: none;
+  outline: none;
+  color: lightcoral;
+  font-weight: bold;
+  font-size: clamp(0.95rem, 1.6vw, 1.1875rem);
   padding-left: 10px;
   letter-spacing: 1px;
   font-family: none;
