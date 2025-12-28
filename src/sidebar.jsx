@@ -45,6 +45,18 @@ function Sidebar({ shrink }) {
                   </li>
                 </NavLink>
                 <NavLink
+                  to="/dailyCheckinPAge"
+                  className={(info) =>
+                    info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
+                  }
+                >
+                  <li className="sidebar-li">
+                    <i className="fa-solid fa-person-walking sidebar-icon"></i>
+
+                    <span className="sidebar-element">My Journey</span>
+                  </li>
+                </NavLink>
+                <NavLink
                   to="/leaderboard"
                   className={(info) =>
                     info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
@@ -52,7 +64,7 @@ function Sidebar({ shrink }) {
                 >
                   <li className="sidebar-li">
                     <i className="fa-solid fa-trophy sidebar-icon"></i>
-                    <span className="sidebar-element ">Leaderboard</span>
+                    <span className="sidebar-element">Leaderboard</span>
                   </li>
                 </NavLink>
                 <NavLink

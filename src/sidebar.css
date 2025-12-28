@@ -72,6 +72,9 @@
 .main.small .sidebar-element {
   display: none;
 }
+.main.small .sidebar-element-logout {
+  display: none;
+}
 .main.small .sidebar-navlink {
   transform: none;
   width: 60px;
@@ -90,6 +93,9 @@
     top: -5 !important;
   }
   .main.small .sidebar-element {
+    display: block;
+  }
+  .main.small .sidebar-element-logout {
     display: block;
   }
   .main.small .sidebar-navlink {

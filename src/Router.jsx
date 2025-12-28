@@ -13,7 +13,8 @@ import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Loading from "./loading";
 import Globalclass from "./globalclass";
-
+import DailyCheckinPage from "./dailyCheckinPage";
+import PostDailycheckin from "./postDailycheckin";
 // import Sidebar from "./sidebar";
 
 export function Router() {
@@ -48,6 +49,22 @@ export function Router() {
             element={
               <ProtectedRoute>
                 <Leaderboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dailyCheckinPage"
+            element={
+              <ProtectedRoute>
+                <DailyCheckinPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/postCheckin"
+            element={
+              <ProtectedRoute>
+                <PostDailycheckin />
               </ProtectedRoute>
             }
           />

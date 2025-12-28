@@ -1,0 +1,85 @@
+.postDaily-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+.postdaily-heading {
+  color: #0ef;
+  text-shadow: 0 0 10px #0ef;
+  font-size: clamp(1.6rem, 2.2vw, 2.1875rem);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.postdaily-input {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 1rem;
+  border-bottom: 2px solid #0ef;
+  color: #fff;
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+
+  padding: 0.5rem;
+}
+.postdaily-input::placeholder {
+  color: lightgray;
+}
+.postdaily-anonymous {
+  display: flex;
+  color: #0ef;
+  padding: 1rem;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
+
+  /* font-size: 20px; */
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  gap: 0.5rem;
+}
+
+.textarea-postdaily {
+  width: 350px;
+  height: 200px;
+  background: none;
+  outline: none;
+  border: 2px solid #0ef;
+  border-radius: 8px;
+  color: #fff;
+  /* font-size: 18px; */
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+
+  resize: vertical;
+  padding: 1rem;
+  letter-spacing: 0.5px;
+}
+.textarea-postdaily::placeholder {
+  color: lightgray;
+}
+
+.postdaily-postbtn {
+  width: 20%;
+  background: linear-gradient(90deg, yellowgreen, lightgreen);
+  color: black;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.postdaily-postbtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #0ef;
+}
+@media (max-width: 450px) {
+  .textarea-postdaily {
+    width: 300px;
+  }
+  .postdaily-postbtn {
+    width: 150px !important;
+  }
+}

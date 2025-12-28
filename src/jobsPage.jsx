@@ -318,13 +318,9 @@ import "./jobsPage.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
-import Globalclass from "./globalclass";
 import Loading from "./loading";
 function JobsPage() {
-  //location
-  // const location = useLocation();
   const [companys, setcompanys] = useState([]);
   const [jobs, setJobs] = useState([]);
 
@@ -444,9 +440,7 @@ function JobsPage() {
       })
       .catch((err) => console.log(err));
   }, []);
-  // useEffect(() => {
 
-  // }, []);
   return (
     <>
       <div className="whole-jobspage">
