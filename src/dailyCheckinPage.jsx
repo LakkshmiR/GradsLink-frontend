@@ -19,7 +19,6 @@ function DailyCheckinPage() {
       .get("https://gradslink-25.onrender.com/getCheckinData")
       .then((result) => {
         setDailyCheckindata(result.data);
-        location.reload();
       })
       .catch((err) => console.log(err));
   }, []);
