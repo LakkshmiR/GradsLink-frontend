@@ -86,6 +86,7 @@
   word-spacing: clamp(0.05rem, 0.3vw, 0.125rem);
 
   line-height: clamp(1.35, 1.4, 1.55);
+  white-space: pre-wrap;
 }
 .comment-btn {
   background: green;
