@@ -12,7 +12,7 @@ function PostDailycheckin() {
   const handlePostCheckin = () => {
     axios
       .post("https://gradslink-25.onrender.com/postCheckin", {
-        postTitle,
+        postTitle: postTitle,
         postContent,
         email,
         name,

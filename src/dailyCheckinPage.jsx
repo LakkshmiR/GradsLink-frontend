@@ -2,7 +2,7 @@ import "./dailyCheckinPage.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { BsTrash } from "react-icons/bs";
-
+import Loading from "./loading";
 import axios from "axios";
 function DailyCheckinPage() {
   const navigate = useNavigate();
@@ -86,95 +86,123 @@ function DailyCheckinPage() {
   //sort post data
   const sortedPosts = dailyCheckindata.sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt));
 
+  //handle like for post
+  const [likeCount, setLikeCount] = useState(false);
+  const handleLike = () => {
+    setLikeCount(!likeCount);
+    console.log(likeCount);
+  };
+
+  //Loading
+  const [showloading, setShowloading] = useState(true);
+  useEffect(() => {
+    axios
+      .get("https://gradslink-25.onrender.com/health")
+      .then((result) => {
+        console.log(result.data);
+        if (result.data.status === "ok") {
+          setShowloading(false);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="whole-dailycheckin">
-        <h1 className="dailycheckin-heading">Our Job Hunt Journey</h1>
-        <div className="journey-header">
-          <button
-            type="button"
-            onClick={() => navigate("/postCheckin")}
-            className="post-journey-btn"
-          >
-            post journey +
-          </button>
-        </div>
-        {sortedPosts.map((data) => {
-          return (
-            <div className="postcheckin-container">
-              <div key={data._id}>
-                <div className="post-section">
-                  <h2 className="post-section-heading">
-                    {data.name} - {data.postTitle}
-                  </h2>
-                  <p className="post-section-content">{data.postContent}</p>
-                </div>
-                <div className="comment-btn-container">
-                  <button
-                    type="button"
-                    onClick={() => handleComment(data._id)}
-                    className="comment-btn"
-                  >
-                    comment
-                  </button>
+        {/* {showloading && <Loading />} */}
+        {/* {!showloading && ( */}
+        <>
+          <h1 className="dailycheckin-heading">Our Job Hunt Journey</h1>
+          <div className="journey-header">
+            <button
+              type="button"
+              onClick={() => navigate("/postCheckin")}
+              className="post-journey-btn"
+            >
+              post journey +
+            </button>
+          </div>
+          {sortedPosts.map((data) => {
+            return (
+              <div className="postcheckin-container">
+                <div key={data._id}>
+                  <div className="post-section">
+                    <h2 className="post-section-heading">
+                      {data.name} - {data.postTitle}
+                    </h2>
+                    <p className="post-section-content">{data.postContent}</p>
+                  </div>
+                  <div className="comment-btn-container">
+                    <button onClick={() => handleLike()}>Like</button>
+                    <p>{likeCount ? "liked" : "not liked"}</p>
+                    <button
+                      type="button"
+                      onClick={() => handleComment(data._id)}
+                      className="comment-btn"
+                    >
+                      comment
+                    </button>
 
-                  <p>
-                    {data.email === email ? (
-                      <BsTrash
-                        onClick={() => handlePostDelete(data._id)}
-                        className="comment-delete-icon"
-                      />
-                    ) : (
-                      ""
-                    )}
-                  </p>
-                </div>
-                <br />
-                <br />
-                {postidNow === data._id && commentOpen && (
-                  <>
-                    {idCommentData.map((commentData) => {
-                      return (
-                        <>
-                          <div key={commentData._id} className="get-comment-data">
-                            <p className="commentor-name">{commentData.name}</p>
-                            <div className="comment-delete">
-                              <p className="comment">{commentData.comment}</p>
-                              <p>
-                                {commentData.email === email ? (
-                                  <BsTrash
-                                    onClick={() => {
-                                      handleCommentDelete(commentData._id, data._id);
-                                    }}
-                                    className="comment-delete-icon"
-                                  />
-                                ) : (
-                                  ""
-                                )}
-                              </p>
+                    <p>
+                      {data.email === email ? (
+                        <BsTrash
+                          onClick={() => handlePostDelete(data._id)}
+                          className="comment-delete-icon"
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </p>
+                  </div>
+                  <br />
+                  <br />
+                  {postidNow === data._id && commentOpen && (
+                    <>
+                      {idCommentData.map((commentData) => {
+                        return (
+                          <>
+                            <div key={commentData._id} className="get-comment-data">
+                              <p className="commentor-name">{commentData.name}</p>
+                              <div className="comment-delete">
+                                <p className="comment">{commentData.comment}</p>
+                                <p>
+                                  {commentData.email === email ? (
+                                    <BsTrash
+                                      onClick={() => {
+                                        handleCommentDelete(commentData._id, data._id);
+                                      }}
+                                      className="comment-delete-icon"
+                                    />
+                                  ) : (
+                                    ""
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </>
-                      );
-                    })}
-                    <div className="postcomment-section">
-                      <textarea
-                        placeholder="share your thoughts here......"
-                        className="comment-input"
-                        value={comments}
-                        onChange={(e) => setComments(e.target.value)}
-                      ></textarea>
-                      <i
-                        className="fa-solid fa-paper-plane postcomment-icon"
-                        onClick={() => handlePostComment(data._id)}
-                      ></i>
-                    </div>
-                  </>
-                )}
+                          </>
+                        );
+                      })}
+                      <div className="postcomment-section">
+                        <textarea
+                          placeholder="share your thoughts here......"
+                          className="comment-input"
+                          value={comments}
+                          onChange={(e) => setComments(e.target.value)}
+                        ></textarea>
+                        <i
+                          className="fa-solid fa-paper-plane postcomment-icon"
+                          onClick={() => handlePostComment(data._id)}
+                        ></i>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </>
+        {/* )} */}
       </div>
     </>
   );

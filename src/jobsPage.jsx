@@ -363,8 +363,10 @@ function JobsPage() {
       })
       .catch((err) => console.log(err));
   };
-  const filteredjobs = companys.filter((company) =>
-    company.jobrole.toLowerCase().includes(searchtext.toLowerCase())
+  const filteredjobs = companys.filter(
+    (company) =>
+      company.jobrole.toLowerCase().includes(searchtext.toLowerCase()) ||
+      company.companyName.toLowerCase().includes(searchtext.toLowerCase())
   );
   useEffect(() => {
     if (searchtext != "" && filteredjobs.length === 0) {
@@ -458,7 +460,7 @@ function JobsPage() {
             <div className="search-container">
               <input
                 type="text"
-                placeholder="Search role here..."
+                placeholder="Search here..."
                 className="search-input"
                 onChange={(e) => setSearchtext(e.target.value)}
               />

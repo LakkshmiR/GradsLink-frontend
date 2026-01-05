@@ -49,6 +49,18 @@
   font-family: none;
   text-decoration: none !important;
 }
+.sidebar-element-total {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: clamp(0.95rem, 1.6vw, 1.5rem);
+  font-weight: Bold;
+  /* padding-left: 10px; */
+  letter-spacing: 1px;
+  font-family: none;
+  text-decoration: none !important;
+}
 .sidebar-navlink {
   display: block;
   color: #0ef;
@@ -73,6 +85,9 @@
   display: none;
 }
 .main.small .sidebar-element-logout {
+  display: none;
+}
+.main.small .sidebar-element-total {
   display: none;
 }
 .main.small .sidebar-navlink {

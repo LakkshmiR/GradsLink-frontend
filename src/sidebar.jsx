@@ -1,7 +1,8 @@
 import "./sidebar.css";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Sidebar({ shrink }) {
   const navigate = useNavigate();
@@ -14,6 +15,16 @@ function Sidebar({ shrink }) {
 
     navigate("/login", { replace: true });
   };
+  const [usercount, setusercount] = useState("");
+  useEffect(() => {
+    axios
+      .get("https://gradslink-25.onrender.com/totalusers")
+      .then((result) => {
+        console.log(result);
+        setusercount(result.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
@@ -78,6 +89,9 @@ function Sidebar({ shrink }) {
                     <span className="sidebar-element-logout">Logout</span>
                   </li>
                 </NavLink>
+                <li className="sidebar-li">
+                  <span className="sidebar-element-total">Total Grads:{usercount}</span>
+                </li>
               </ul>
             </div>
           </div>
