@@ -134,8 +134,8 @@ function DailyCheckinPage() {
                     <p className="post-section-content">{data.postContent}</p>
                   </div>
                   <div className="comment-btn-container">
-                    <button onClick={() => handleLike()}>Like</button>
-                    <p>{likeCount ? "liked" : "not liked"}</p>
+                    {/* <button onClick={() => handleLike()}>Like</button> */}
+                    {/* <p>{likeCount ? "liked" : "not liked"}</p> */}
                     <button
                       type="button"
                       onClick={() => handleComment(data._id)}
