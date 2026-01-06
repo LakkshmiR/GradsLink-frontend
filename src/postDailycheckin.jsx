@@ -17,7 +17,10 @@ function PostDailycheckin() {
         email,
         name,
       })
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate("/dailyCheckinPage");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -50,7 +53,6 @@ function PostDailycheckin() {
           type="button"
           onClick={() => {
             handlePostCheckin();
-            navigate("/dailyCheckinPage", { state: { refresh: true } });
           }}
           className="postdaily-postbtn "
         >
