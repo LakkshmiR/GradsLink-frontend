@@ -50,7 +50,7 @@ function PostDailycheckin() {
           type="button"
           onClick={() => {
             handlePostCheckin();
-            navigate("/dailyCheckinPage");
+            navigate("/dailyCheckinPage", { state: { refresh: true } });
           }}
           className="postdaily-postbtn "
         >
