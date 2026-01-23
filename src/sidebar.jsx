@@ -18,7 +18,7 @@ function Sidebar({ shrink }) {
   const [usercount, setusercount] = useState("");
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/totalusers")
+      .get("https://gradslink-25.onrender.com/totalusers")
       .then((result) => {
         console.log(result);
         setusercount(result.data);

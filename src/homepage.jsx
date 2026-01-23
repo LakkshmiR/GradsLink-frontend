@@ -13,14 +13,14 @@ function Homepage() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/get")
+      .get("https://gradslink-25.onrender.com/get")
       .then((result) => setcompanys(result.data))
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
     const loggedinuser = localStorage.getItem("name");
     axios
-      .delete("https://grads-link-frontend.vercel.app/delete/" + id, {
+      .delete("https://gradslink-25.onrender.com/delete/" + id, {
         data: { loggedinuser: loggedinuser },
       })
       .then((result) => {
@@ -61,7 +61,7 @@ function Homepage() {
   const [showloading, setShowloading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/health")
+      .get("https://gradslink-25.onrender.com/health")
       .then((result) => {
         console.log(result.data);
         if (result.data.status === "ok") {

@@ -12,16 +12,16 @@ function Register() {
   const navigate = useNavigate();
   const handleRegister = () => {
     axios
-      .post("https://grads-link-frontend.vercel.app/regpost", {
+      .post("https://gradslink-25.onrender.com/regpost", {
         name: name,
         email: email,
         password: password,
       })
       .then((result) => {
         if (result.data.message == "Registration Success!!!") {
-          axios.post("https://grads-link-frontend.vercel.app/createrefcode", { email: email });
+          axios.post("https://gradslink-25.onrender.com/createrefcode", { email: email });
 
-          axios.post("https://grads-link-frontend.vercel.app/updatereferrallb", {
+          axios.post("https://gradslink-25.onrender.com/updatereferrallb", {
             refcode: refcode,
           });
           navigate("/login");

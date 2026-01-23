@@ -11,7 +11,7 @@ function ForgotPassword() {
   const handleReset = () => {
     if (registeremail != "" && newpw != "") {
       axios
-        .post("https://grads-link-frontend.vercel.app/forgotpw", {
+        .post("https://gradslink-25.onrender.com/forgotpw", {
           registeremail: registeremail,
           newpw: newpw,
         })

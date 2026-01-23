@@ -21,7 +21,7 @@ function JobsPage() {
   }, []);
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/get")
+      .get("https://gradslink-25.onrender.com/get")
       .then((result) => {
         setcompanys(result.data);
         console.log(result.data);
@@ -39,7 +39,7 @@ function JobsPage() {
     const email = localStorage.getItem("email");
     const token = localStorage.getItem("token");
     axios
-      .delete("https://grads-link-frontend.vercel.app/delete/" + id, {
+      .delete("https://gradslink-25.onrender.com/delete/" + id, {
         data: { loggedinuser: loggedinuser, email: email, token: token },
       })
       .then((result) => {
@@ -75,7 +75,7 @@ function JobsPage() {
   useEffect(() => {
     const loggedinEmail = localStorage.getItem("email");
     const token = localStorage.getItem("token");
-    axios.post("https://grads-link-frontend.vercel.app/createlb", {
+    axios.post("https://gradslink-25.onrender.com/createlb", {
       loggedinuser: loggedinuser,
       loggedinEmail: loggedinEmail,
       token: token,
@@ -87,7 +87,7 @@ function JobsPage() {
     const loggedinEmail = localStorage.getItem("email");
 
     axios
-      .post("https://grads-link-frontend.vercel.app/updateStreak", {
+      .post("https://gradslink-25.onrender.com/updateStreak", {
         loggedinEmail: loggedinEmail,
         loggedinuser: loggedinuser,
       })
@@ -102,12 +102,12 @@ function JobsPage() {
       return;
     }
     axios
-      .get("https://grads-link-frontend.vercel.app/getrefcode", {
+      .get("https://gradslink-25.onrender.com/getrefcode", {
         params: { loggedinemail: loggedinemail },
       })
       .then((result) => {
         if (result.data.referralcode === undefined) {
-          axios.post("https://grads-link-frontend.vercel.app/createrefcode", {
+          axios.post("https://gradslink-25.onrender.com/createrefcode", {
             email: loggedinemail,
           });
         }
@@ -120,7 +120,7 @@ function JobsPage() {
   const [showloading, setShowloading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/health")
+      .get("https://gradslink-25.onrender.com/health")
       .then((result) => {
         console.log(result.data);
         if (result.data.status === "ok") {

@@ -11,7 +11,7 @@ function PostDailycheckin() {
   const name = anonymous ? "A Job Hunter" : localStorage.getItem("name");
   const handlePostCheckin = () => {
     axios
-      .post("https://grads-link-frontend.vercel.app/postCheckin", {
+      .post("https://gradslink-25.onrender.com/postCheckin", {
         postTitle: postTitle,
         postContent,
         email,

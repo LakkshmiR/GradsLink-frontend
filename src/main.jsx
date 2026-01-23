@@ -12,7 +12,7 @@ import { useEffect } from "react";
 // import Loading from "./loading";
 import "react-toastify/dist/ReactToastify.css";
 import socket from "./socket";
-// const socket = io("https://grads-link-frontend.vercel.app");
+// const socket = io("https://gradslink-25.onrender.com");
 socket.on("connect", () => {
   console.log("Connected to Backend:", socket.id);
 });

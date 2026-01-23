@@ -16,7 +16,7 @@ function DailyCheckinPage() {
   //get checkin
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/getCheckinData")
+      .get("https://gradslink-25.onrender.com/getCheckinData")
       .then((result) => {
         setDailyCheckindata(result.data);
       })
@@ -37,7 +37,7 @@ function DailyCheckinPage() {
   const email = localStorage.getItem("email");
   const fetchComments = (id) => {
     axios
-      .get("https://grads-link-frontend.vercel.app/getComment/" + id)
+      .get("https://gradslink-25.onrender.com/getComment/" + id)
       .then((result) => {
         console.log(result);
         setIdCommentData(result.data);
@@ -46,7 +46,7 @@ function DailyCheckinPage() {
   };
   const handlePostComment = (id) => {
     axios
-      .post("https://grads-link-frontend.vercel.app/postComment/" + id, { comments, name, email })
+      .post("https://gradslink-25.onrender.com/postComment/" + id, { comments, name, email })
       .then((result) => {
         console.log(result);
         setComments("");
@@ -57,7 +57,7 @@ function DailyCheckinPage() {
   //Delete Post
   const handlePostDelete = (id) => {
     axios
-      .delete("https://grads-link-frontend.vercel.app/postDelete/" + id, { data: { email } })
+      .delete("https://gradslink-25.onrender.com/postDelete/" + id, { data: { email } })
       .then((result) => {
         console.log(result);
         alert("Post Deleted Successfully");
@@ -68,14 +68,14 @@ function DailyCheckinPage() {
   //DELETE COMMENT
   const handleCommentDelete = (commentID, postID) => {
     axios
-      .delete("https://grads-link-frontend.vercel.app/commentDelete/" + commentID, {
+      .delete("https://gradslink-25.onrender.com/commentDelete/" + commentID, {
         data: { email },
       })
       .then((result) => {
         console.log(result);
         alert("Comment Deleted Succesfully");
         axios
-          .get("https://grads-link-frontend.vercel.app/getComment/" + postID)
+          .get("https://gradslink-25.onrender.com/getComment/" + postID)
           .then((result) => {
             console.log(result);
             setIdCommentData(result.data);
@@ -101,7 +101,7 @@ function DailyCheckinPage() {
   const [showloading, setShowloading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://grads-link-frontend.vercel.app/health")
+      .get("https://gradslink-25.onrender.com/health")
       .then((result) => {
         console.log(result.data);
         if (result.data.status === "ok") {

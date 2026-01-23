@@ -11,7 +11,7 @@ function Login() {
   const navigate = useNavigate();
   const handleLogin = () => {
     axios
-      .post("https://grads-link-frontend.vercel.app/login", {
+      .post("https://gradslink-25.onrender.com/login", {
         loginemail: loginemail,
         loginpw: loginpw,
       })
@@ -34,7 +34,7 @@ function Login() {
   }, []);
   const handleGoogleLogin = (credentialResponse) => {
     axios
-      .post("https://grads-link-frontend.vercel.app/google", {
+      .post("https://gradslink-25.onrender.com/google", {
         credential: credentialResponse.credential,
       })
       .then((result) => {
