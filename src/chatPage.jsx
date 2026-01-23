@@ -91,6 +91,7 @@ function ChatPage() {
       setTimeLeft(null);
       setShowTime(false);
       localStorage.removeItem("roomId");
+      localStorage.removeItem("chatStartTime");
     });
 
     return () => {
