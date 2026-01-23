@@ -49,10 +49,10 @@ function Homepage() {
   const jobstoshow = arraytoshow.slice(startIndex, endIndex);
   const totalpages = Math.ceil(arraytoshow.length / itemsperPage);
   //logout
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   navigate("/login");
+  // };
   const handleClick = (e) => {
     e.preventDefault(); // stop full page reload
     navigate("/login"); // navigate internally via React Router

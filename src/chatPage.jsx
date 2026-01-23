@@ -63,15 +63,14 @@ function ChatPage() {
       setRoomId(data.roomId);
       localStorage.setItem("roomId", data.roomId);
 
-      //Timer
-      // const startTime = Date.now();
-      localStorage.setItem("chatStartTime", data.startTime);
-      const elapsed = Math.floor((Date.now() - data.startTime) / 1000);
-      const totalTime = 5 * 60;
-      setTimeLeft(totalTime - elapsed);
-      setShowTime(false);
+      socket.emit("get_time", { roomId: data.roomId });
     });
 
+    //sync time
+    socket.on("sync_time", (data) => {
+      setTimeLeft(data.remaining);
+      setShowTime(false);
+    });
     //load old msgs
     socket.on("load_old_messages", (oldMessages) => {
       console.log("Old Messages:", oldMessages);
@@ -96,6 +95,7 @@ function ChatPage() {
 
     return () => {
       socket.off("chat_started");
+      socket.off("sync_time");
       socket.off("load_old_messages");
       socket.off("receive_msg");
       socket.off("chat_ended");
