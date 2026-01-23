@@ -137,6 +137,10 @@
 .journey-header {
   padding: 1rem;
 }
+.journey-date {
+  padding: 0.5rem;
+  font-size: 18px;
+}
 @media (max-width: 450px) {
   .comment-input {
     width: 250px;

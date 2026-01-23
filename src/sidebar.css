@@ -126,4 +126,7 @@
     align-items: center;
     justify-content: flex-start;
   }
+  .main.small .sidebar-element-total {
+    display: block;
+  }
 }

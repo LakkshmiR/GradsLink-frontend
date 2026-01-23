@@ -15,6 +15,7 @@ import Loading from "./loading";
 import Globalclass from "./globalclass";
 import DailyCheckinPage from "./dailyCheckinPage";
 import PostDailycheckin from "./postDailycheckin";
+import ChatPage from "./chatPage";
 // import Sidebar from "./sidebar";
 
 export function Router() {
@@ -79,7 +80,7 @@ export function Router() {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
 
         <Route path="/loading" element={<Loading />} />
-        {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+        <Route path="/chatPage" element={<ChatPage />} />
       </Routes>
       <Footer />
       {/* </HashRouter> */}

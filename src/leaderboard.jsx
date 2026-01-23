@@ -17,7 +17,7 @@ function Leaderboard() {
   useEffect(() => {
     axios
 
-      .get("https://gradslink-25.onrender.com/getlb")
+      .get("https://grads-link-frontend.vercel.app/getlb")
       .then((result) => {
         setlbdatas(result.data);
         console.log(result.data);
@@ -31,7 +31,7 @@ function Leaderboard() {
       return;
     }
     axios
-      .get("https://gradslink-25.onrender.com/getrefcode", {
+      .get("https://grads-link-frontend.vercel.app/getrefcode", {
         params: { loggedinemail: loggedinemail },
       })
       .then((result) => {

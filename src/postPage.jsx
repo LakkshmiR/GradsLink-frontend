@@ -23,7 +23,7 @@ function PostPage() {
       const email = localStorage.getItem("email");
       const token = localStorage.getItem("token");
       axios
-        .post("https://gradslink-25.onrender.com/add", {
+        .post("https://grads-link-frontend.vercel.app/add", {
           companyName: companyName,
           jobrole: jobrole,
           experience: experience,
