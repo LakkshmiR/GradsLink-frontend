@@ -31,6 +31,7 @@ function ChatPage() {
         socket.emit("rejoin_room", { roomId: savedRoomId });
         socket.hasRejoined = true;
       }
+      socket.emit("get_time", { roomId: savedRoomId });
     }
 
     //timer
