@@ -69,7 +69,16 @@ export function Router() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/chatPage"
+            element={
+              <ProtectedRoute>
+                <ChatPage />
+              </ProtectedRoute>
+            }
+          />
         </Route>
+
         <Route
           path="/login"
           element={localStorage.getItem("token") ? <Navigate to="/jobslist" /> : <Login />}
@@ -80,7 +89,6 @@ export function Router() {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
 
         <Route path="/loading" element={<Loading />} />
-        <Route path="/chatPage" element={<ChatPage />} />
       </Routes>
       <Footer />
       {/* </HashRouter> */}
