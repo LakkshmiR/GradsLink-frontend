@@ -269,7 +269,7 @@ body {
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
-  height: 70vh;
+  height: 70dvh;
   margin: auto;
   margin-top: 2rem;
   display: flex;
@@ -278,7 +278,6 @@ body {
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  /* margin-bottom: 10rem; */
 }
 
 /* Header */
