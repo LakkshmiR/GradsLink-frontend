@@ -159,19 +159,19 @@ function ChatPage() {
     }
   }, [rec_messages, isNearBottom]);
   //
-  useEffect(() => {
-    const handleResize = () => {
-      const vh = window.visualViewport.height;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const vh = window.visualViewport.height;
+  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  //   };
 
-    handleResize(); // initial
-    window.visualViewport.addEventListener("resize", handleResize);
+  //   handleResize(); // initial
+  //   window.visualViewport.addEventListener("resize", handleResize);
 
-    return () => {
-      window.visualViewport.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.visualViewport.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   return (
     <>
       {roomId ? (
