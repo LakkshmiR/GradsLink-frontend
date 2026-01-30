@@ -143,7 +143,7 @@ function ChatPage() {
 
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = container;
-      const nearBottom = scrollHeight - scrollTop - clientHeight < 100;
+      const nearBottom = scrollHeight - scrollTop - clientHeight < 20;
       setIsNearBottom(nearBottom);
     };
     container.addEventListener("scroll", handleScroll);
