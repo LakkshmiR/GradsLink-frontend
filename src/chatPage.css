@@ -498,7 +498,6 @@ body {
     /* border-radius: 0; */
     border-radius: 10px;
     margin-top: 0rem;
-    position: fixed;
   }
 
   .message {
