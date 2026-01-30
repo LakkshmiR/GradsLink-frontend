@@ -269,8 +269,8 @@ body {
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
-  /* height: 70vh; */
-  height: calc(var(--vh, 1vh) * 0.7);
+  height: 70vh;
+  /* height: calc(var(--vh, 1vh) * 0.7); */
   margin: auto;
   margin-top: 2rem;
   display: flex;
