@@ -269,8 +269,9 @@ body {
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
-  height: 70vh;
+  /* height: 70vh; */
   /* height: calc(var(--vh, 1vh) * 0.7); */
+  height: var(--app-height);
   margin: auto;
   margin-top: 2rem;
   display: flex;
@@ -292,6 +293,7 @@ body {
   color: white;
   font-weight: bold;
   font-size: 14px;
+  flex-shrink: 0;
 }
 .chat-h3 {
   font-size: 20px;
@@ -340,12 +342,13 @@ body {
 /* Chat messages area */
 .chat-content {
   flex: 1;
-  padding: 15px;
+  padding: 12px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
   background: #020617;
+  overscroll-behavior: contain;
 }
 
 /* Message bubbles */
@@ -389,6 +392,9 @@ body {
   gap: 10px;
   background: #020617;
   border-top: 1px solid #1e293b;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
 }
 
 .chat-input-area input {
@@ -493,10 +499,14 @@ body {
 
 /* 📱 Mobile Responsive */
 @media (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
   .chat-wrapper {
     /* height: 100vh; */
     /* border-radius: 0; */
     border-radius: 10px;
+    height: var(--app-height);
     margin-top: 0rem;
     /* position: fixed;
     inset: 0; */
