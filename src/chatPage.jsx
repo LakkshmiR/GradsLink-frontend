@@ -140,15 +140,18 @@ function ChatPage() {
   useEffect(() => {
     const container = chatContainerRef.current;
     if (!container) return;
+    if (isNearBottom) {
+      container.scrollTop = container.scrollHeight;
+    }
 
-    const handleScroll = () => {
-      const { scrollTop, scrollHeight, clientHeight } = container;
-      const nearBottom = scrollHeight - scrollTop - clientHeight < 20;
-      setIsNearBottom(nearBottom);
-    };
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+    // const handleScroll = () => {
+    //   const { scrollTop, scrollHeight, clientHeight } = container;
+    //   const nearBottom = scrollHeight - scrollTop - clientHeight < 20;
+    //   setIsNearBottom(nearBottom);
+    // };
+    // container.addEventListener("scroll", handleScroll);
+    // return () => container.removeEventListener("scroll", handleScroll);
+  }, [rec_messages]);
 
   useEffect(() => {
     if (isNearBottom) {
