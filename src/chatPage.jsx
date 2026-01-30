@@ -219,7 +219,7 @@ function ChatPage() {
               onMouseDown={(e) => e.preventDefault()}
               onClick={handleSendMessage}
             >
-              <i class="fas fa-paper-plane"></i>
+              <i className="fas fa-paper-plane"></i>
             </button>
           </div>
 
