@@ -51,10 +51,18 @@ function ChatPage() {
     setUserId(chatId);
     socket.emit("join_waiting_queue");
   };
+
+  //inputref
+  const inputRef = useRef(null);
   //send msg
   const handleSendMessage = () => {
+    if (!msg.trim()) return;
     socket.emit("send_msg", { roomId, msg, userId });
     setMsg("");
+    //keyboard opne
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 10);
   };
   useEffect(() => {
     socket.on("chat_started", (data) => {
@@ -196,6 +204,7 @@ function ChatPage() {
           <div className="chat-input-area">
             <input
               placeholder="Type your message..."
+              ref={inputRef}
               type="text"
               value={msg}
               onChange={(e) => setMsg(e.target.value)}
@@ -205,7 +214,11 @@ function ChatPage() {
                 }
               }}
             />
-            <button onClick={handleSendMessage}>
+            <button
+              type="button"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={handleSendMessage}
+            >
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
