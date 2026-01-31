@@ -17,6 +17,7 @@
   /* height: calc(var(--vh, 1vh) * 0.7); */
   margin: auto;
   margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
   display: flex;
   flex-direction: column;
   background: #0f172a;
