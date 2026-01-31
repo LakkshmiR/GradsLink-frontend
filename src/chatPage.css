@@ -16,7 +16,7 @@
   /* max-height: calc(var(--vh, 1vh) * 100 - 20px); */
   /* height: calc(var(--vh, 1vh) * 0.7); */
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   background: #0f172a;
