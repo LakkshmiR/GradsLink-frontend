@@ -11,12 +11,12 @@
   width: 100%;
   max-width: 900px;
   /* height: 100dvh; */
-  height: calc(var(--vh, 1vh) * 100 - 100px);
+  height: calc(var(--vh, 1vh) * 100 - 120px);
   /* margin-top: 2rem; */
   /* max-height: calc(var(--vh, 1vh) * 100 - 20px); */
   /* height: calc(var(--vh, 1vh) * 0.7); */
   margin: auto;
-  margin-top: 4rem !important;
+  margin-top: 3.5rem !important;
   display: flex;
   flex-direction: column;
   background: #0f172a;
