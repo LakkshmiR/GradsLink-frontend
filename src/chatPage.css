@@ -11,7 +11,8 @@
   width: 100%;
   max-width: 900px;
   /* height: 100dvh; */
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 - 12px);
+  max-height: calc(var(--vh, 1vh) * 100 - 12px);
   /* height: calc(var(--vh, 1vh) * 0.7); */
   margin: auto;
   margin-top: 2rem;
