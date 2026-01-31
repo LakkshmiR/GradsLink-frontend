@@ -155,20 +155,21 @@ function ChatPage() {
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [rec_messages, isNearBottom]);
-  //
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     const vh = window.visualViewport.height;
-  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
-  //   };
+  useEffect(() => {
+    const setVH = () => {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.visualViewport.height * 0.01}px`
+      );
+    };
 
-  //   handleResize(); // initial
-  //   window.visualViewport.addEventListener("resize", handleResize);
+    window.visualViewport?.addEventListener("resize", setVH);
+    setVH();
 
-  //   return () => {
-  //     window.visualViewport.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+    return () => {
+      window.visualViewport?.removeEventListener("resize", setVH);
+    };
+  }, []);
   return (
     <>
       {roomId ? (
@@ -224,10 +225,6 @@ function ChatPage() {
           </div>
 
           {showTime && <p className="info-text">You can continue chatting or leave anytime.</p>}
-
-          {/* <button className="leave-btn" onClick={handleLeaveChat}>
-            Leave Chat
-          </button> */}
         </div>
       ) : (
         <div className="start-chat-box">
