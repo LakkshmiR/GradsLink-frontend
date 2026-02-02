@@ -1,6 +1,7 @@
 import "./chatPage.css";
 import socket from "./socket";
 import { useEffect, useState, useRef } from "react";
+import { useLayoutEffect } from "react";
 function ChatPage() {
   const [roomId, setRoomId] = useState(null);
   const [msg, setMsg] = useState("");
@@ -60,9 +61,9 @@ function ChatPage() {
     socket.emit("send_msg", { roomId, msg, userId });
     setMsg("");
     //keyboard opne
-    setTimeout(() => {
-      inputRef.current?.focus();
-    }, 10);
+    // setTimeout(() => {
+    //   inputRef.current?.focus();
+    // }, 10);
   };
   useEffect(() => {
     socket.on("chat_started", (data) => {
@@ -134,7 +135,7 @@ function ChatPage() {
 
   //Ref for auto scroll
   const chatContainerRef = useRef(null);
-  const bottomRef = useRef(null);
+  // const bottomRef = useRef(null);
   const [isNearBottom, setIsNearBottom] = useState(true);
 
   useEffect(() => {
@@ -150,34 +151,32 @@ function ChatPage() {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isNearBottom) {
-      if (!bottomRef.current) return;
+  // useEffect(() => {
+  //   if (isNearBottom) {
+  //     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [rec_messages, isNearBottom]);
+  useLayoutEffect(() => {
+    const el = chatContainerRef.current;
+    if (!el) return;
 
-      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-      const isMobile = window.innerWidth <= 768;
+    el.scrollTop = el.scrollHeight;
+  }, [rec_messages]);
+  // useEffect(() => {
+  //   const setVH = () => {
+  //     document.documentElement.style.setProperty(
+  //       "--vh",
+  //       `${window.visualViewport.height * 0.01}px`
+  //     );
+  //   };
 
-      bottomRef.current.scrollIntoView({
-        behavior: isMobile ? "auto" : "smooth",
-        block: "end",
-      });
-    }
-  }, [rec_messages, isNearBottom]);
-  useEffect(() => {
-    const setVH = () => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.visualViewport.height * 0.01}px`
-      );
-    };
+  //   window.visualViewport?.addEventListener("resize", setVH);
+  //   setVH();
 
-    window.visualViewport?.addEventListener("resize", setVH);
-    setVH();
-
-    return () => {
-      window.visualViewport?.removeEventListener("resize", setVH);
-    };
-  }, []);
+  //   return () => {
+  //     window.visualViewport?.removeEventListener("resize", setVH);
+  //   };
+  // }, []);
   return (
     <>
       {roomId ? (
@@ -207,7 +206,7 @@ function ChatPage() {
                 <p>{m.msg}</p>
               </div>
             ))}
-            <div ref={bottomRef}></div>
+            {/* <div ref={bottomRef}></div> */}
           </div>
 
           <div className="chat-input-area">

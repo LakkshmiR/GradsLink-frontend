@@ -11,11 +11,11 @@
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
-  /* height: 100dvh; */
-  height: calc(var(--vh, 1vh) * 100 - 140px);
+  height: 100vh;
+  max-height: 100vh;
+  /* height: calc(var(--vh, 1vh) * 100 - 140px); */
   /* margin-top: 2rem; */
-  /* max-height: calc(var(--vh, 1vh) * 100 - 20px); */
-  /* height: calc(var(--vh, 1vh) * 0.7); */
+
   margin: auto;
   margin-top: 2rem !important;
   margin-bottom: 3rem !important;
@@ -133,12 +133,13 @@
 /* Input area */
 .chat-input-area {
   display: flex;
+  flex-shrink: 0;
   padding: 10px;
   gap: 10px;
   background: #020617;
   border-top: 1px solid #1e293b;
-  position: sticky;
-  bottom: 0;
+  /* position: sticky;
+  bottom: 0; */
 }
 
 .chat-input-area input {
