@@ -4,6 +4,7 @@
 }
 .chat-content {
   color: white;
+  scroll-behavior: auto;
 }
 
 /* Main wrapper */
@@ -278,8 +279,8 @@
     font-size: 16px;
   } */
 }
-html,
+/* html,
 body {
   height: 100%;
   overflow: hidden;
-}
+} */

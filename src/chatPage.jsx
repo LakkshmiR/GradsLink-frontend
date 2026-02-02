@@ -60,11 +60,9 @@ function ChatPage() {
     socket.emit("send_msg", { roomId, msg, userId });
     setMsg("");
     //keyboard opne
-    if (window.innerWidth > 768) {
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 10);
-    }
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 10);
   };
   useEffect(() => {
     socket.on("chat_started", (data) => {
@@ -155,6 +153,12 @@ function ChatPage() {
   useEffect(() => {
     if (isNearBottom) {
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+      const isMobile = window.innerWidth <= 768;
+
+      bottomRef.current.scrollIntoView({
+        behavior: isMobile ? "auto" : "smooth",
+        block: "end",
+      });
     }
   }, [rec_messages, isNearBottom]);
   useEffect(() => {
