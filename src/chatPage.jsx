@@ -152,6 +152,8 @@ function ChatPage() {
 
   useEffect(() => {
     if (isNearBottom) {
+      if (!bottomRef.current) return;
+
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
       const isMobile = window.innerWidth <= 768;
 
