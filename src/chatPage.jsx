@@ -60,9 +60,11 @@ function ChatPage() {
     socket.emit("send_msg", { roomId, msg, userId });
     setMsg("");
     //keyboard opne
-    setTimeout(() => {
-      inputRef.current?.focus();
-    }, 10);
+    if (window.innerWidth > 768) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 10);
+    }
   };
   useEffect(() => {
     socket.on("chat_started", (data) => {
