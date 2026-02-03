@@ -162,37 +162,37 @@ function ChatPage() {
 
     el.scrollTop = el.scrollHeight;
   }, [rec_messages]);
-  useEffect(() => {
-    const setVH = () => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.visualViewport.height * 0.01}px`
-      );
-    };
+  // useEffect(() => {
+  //   const setVH = () => {
+  //     document.documentElement.style.setProperty(
+  //       "--vh",
+  //       `${window.visualViewport.height * 0.01}px`
+  //     );
+  //   };
 
-    window.visualViewport?.addEventListener("resize", setVH);
-    setVH();
+  //   window.visualViewport?.addEventListener("resize", setVH);
+  //   setVH();
 
-    return () => {
-      window.visualViewport?.removeEventListener("resize", setVH);
-    };
-  }, []);
-  useEffect(() => {
-    const setVH = () => {
-      const vh = window.visualViewport
-        ? window.visualViewport.height * 0.01
-        : window.innerHeight * 0.01;
+  //   return () => {
+  //     window.visualViewport?.removeEventListener("resize", setVH);
+  //   };
+  // }, []);
+  // useEffect(() => {
+  //   const setVH = () => {
+  //     const vh = window.visualViewport
+  //       ? window.visualViewport.height * 0.01
+  //       : window.innerHeight * 0.01;
 
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
+  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  //   };
 
-    setVH();
-    window.visualViewport?.addEventListener("resize", setVH);
+  //   setVH();
+  //   window.visualViewport?.addEventListener("resize", setVH);
 
-    return () => {
-      window.visualViewport?.removeEventListener("resize", setVH);
-    };
-  }, []);
+  //   return () => {
+  //     window.visualViewport?.removeEventListener("resize", setVH);
+  //   };
+  // }, []);
   useEffect(() => {
     const updateHeights = () => {
       const vh = window.visualViewport
