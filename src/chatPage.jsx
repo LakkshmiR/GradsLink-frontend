@@ -177,22 +177,43 @@ function ChatPage() {
   //     window.visualViewport?.removeEventListener("resize", setVH);
   //   };
   // }, []);
+  // useEffect(() => {
+  //   const setVH = () => {
+  //     const vh = window.visualViewport
+  //       ? window.visualViewport.height * 0.01
+  //       : window.innerHeight * 0.01;
+
+  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  //   };
+
+  //   setVH();
+  //   window.visualViewport?.addEventListener("resize", setVH);
+
+  //   return () => {
+  //     window.visualViewport?.removeEventListener("resize", setVH);
+  //   };
+  // }, []);
   useEffect(() => {
-  const setVH = () => {
-    const vh = window.visualViewport
-      ? window.visualViewport.height * 0.01
-      : window.innerHeight * 0.01;
+    const updateHeights = () => {
+      const vh = window.visualViewport
+        ? window.visualViewport.height * 0.01
+        : window.innerHeight * 0.01;
 
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  };
+      const inputHeight = inputAreaRef.current ? inputAreaRef.current.offsetHeight : 0;
 
-  setVH();
-  window.visualViewport?.addEventListener("resize", setVH);
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      document.documentElement.style.setProperty("--input-h", `${inputHeight}px`);
+    };
 
-  return () => {
-    window.visualViewport?.removeEventListener("resize", setVH);
-  };
-}, []);
+    updateHeights();
+    window.visualViewport?.addEventListener("resize", updateHeights);
+
+    return () => {
+      window.visualViewport?.removeEventListener("resize", updateHeights);
+    };
+  }, []);
+
+  const inputAreaRef = useRef(null);
 
   return (
     <>
@@ -226,7 +247,7 @@ function ChatPage() {
             {/* <div ref={bottomRef}></div> */}
           </div>
 
-          <div className="chat-input-area">
+          <div className="chat-input-area" ref={inputAreaRef}>
             <input
               placeholder="Type your message..."
               ref={inputRef}
