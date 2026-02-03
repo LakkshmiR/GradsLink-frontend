@@ -67,7 +67,7 @@ function Sidebar({ shrink }) {
                     <span className="sidebar-element">My Journey</span>
                   </li>
                 </NavLink>
-                {/* <NavLink
+                <NavLink
                   to="/chatPage"
                   className={(info) =>
                     info.isActive ? "sidebar-navlink" : "sidebar-navlink-inactive"
@@ -78,7 +78,7 @@ function Sidebar({ shrink }) {
 
                     <span className="sidebar-element">Pair Chat</span>
                   </li>
-                </NavLink> */}
+                </NavLink>
                 <NavLink
                   to="/leaderboard"
                   className={(info) =>

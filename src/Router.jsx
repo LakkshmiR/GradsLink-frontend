@@ -69,14 +69,14 @@ export function Router() {
               </ProtectedRoute>
             }
           />
-          {/* <Route
+          <Route
             path="/chatPage"
             element={
               <ProtectedRoute>
                 <ChatPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
         </Route>
 
         <Route
