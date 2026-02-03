@@ -11,14 +11,14 @@
 .chat-wrapper {
   width: 100%;
   max-width: 900px;
-  height: 100vh;
-  max-height: 100vh;
+  height: 90vh;
+  max-height: 90vh;
   /* height: calc(var(--vh, 1vh) * 100 - 140px); */
   /* margin-top: 2rem; */
 
   margin: auto;
-  /* margin-top: 2rem !important;
-  margin-bottom: 3rem !important; */
+  margin-top: 2rem !important;
+  margin-bottom: 3rem !important;
   display: flex;
   flex-direction: column;
   background: #0f172a;
