@@ -13,9 +13,11 @@
   max-width: 900px;
   /* height: 70vh;
   max-height: 70vh; */
-  height: calc(var(--vh) * 80);
-  max-height: calc(var(--vh) * 80);
-  /* height: calc(var(--vh, 1vh) * 100 - 140px); */
+
+  /* height: calc(var(--vh) * 80);
+  max-height: calc(var(--vh) * 80); */
+  height: calc(var(--vh) * 100 - var(--input-h));
+  max-height: calc(var(--vh) * 100 - var(--input-h));
   /* margin-top: 2rem; */
 
   margin: auto;
