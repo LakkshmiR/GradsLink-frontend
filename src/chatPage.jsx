@@ -177,6 +177,23 @@ function ChatPage() {
   //     window.visualViewport?.removeEventListener("resize", setVH);
   //   };
   // }, []);
+  useEffect(() => {
+  const setVH = () => {
+    const vh = window.visualViewport
+      ? window.visualViewport.height * 0.01
+      : window.innerHeight * 0.01;
+
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  setVH();
+  window.visualViewport?.addEventListener("resize", setVH);
+
+  return () => {
+    window.visualViewport?.removeEventListener("resize", setVH);
+  };
+}, []);
+
   return (
     <>
       {roomId ? (
