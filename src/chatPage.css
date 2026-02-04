@@ -18,7 +18,7 @@
   max-height: calc(var(--vh) * 100); */
   /* height: calc(var(--vh) * 100 - var(--input-h));
   max-height: calc(var(--vh) * 100 - var(--input-h)); */
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
 
   margin: auto;
   /* margin-top: 2rem !important; */
