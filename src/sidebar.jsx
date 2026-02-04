@@ -76,7 +76,7 @@ function Sidebar({ shrink }) {
                   <li className="sidebar-li">
                     <i className="fa-solid fas fa-user-friends sidebar-icon"></i>
 
-                    <span className="sidebar-element">Pair Chat</span>
+                    <span className="sidebar-element">GradsPair Chat</span>
                   </li>
                 </NavLink>
                 <NavLink

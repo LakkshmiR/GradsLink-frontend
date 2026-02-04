@@ -231,7 +231,7 @@ function ChatPage() {
       {roomId ? (
         <div className="chat-wrapper">
           <div className="chat-header">
-            <h3 className="chat-h3">🤝 Pair Chat</h3>
+            <h3 className="chat-h3">🤝 GradsPair Chat</h3>
             <div className="timer-box">
               {timeLeft !== null && timeLeft > 0 && (
                 <span className="timer">
