@@ -9,9 +9,6 @@
 
 /* Main wrapper */
 .chat-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
   width: 100%;
   max-width: 900px;
   height: 70vh;
@@ -254,6 +251,9 @@
   .chat-wrapper {
     /* height: 100vh; */
     /* border-radius: 0; */
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
     border-radius: 10px;
     margin-top: 0rem;
     height: calc(var(--vh) * 100);
