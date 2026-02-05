@@ -135,7 +135,7 @@ function ChatPage() {
 
   //Ref for auto scroll
   const chatContainerRef = useRef(null);
-  // const bottomRef = useRef(null);
+  const bottomRef = useRef(null);
   const [isNearBottom, setIsNearBottom] = useState(true);
 
   useEffect(() => {
@@ -225,7 +225,7 @@ function ChatPage() {
                 <p>{m.msg}</p>
               </div>
             ))}
-            {/* <div ref={bottomRef}></div> */}
+            <div ref={bottomRef}></div>
           </div>
 
           <div className="chat-input-area" ref={inputAreaRef}>
