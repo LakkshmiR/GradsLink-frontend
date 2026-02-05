@@ -134,7 +134,7 @@
     padding: 8px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 848px) {
   .heading-jobspage {
     padding-top: 0;
   }
