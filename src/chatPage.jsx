@@ -295,8 +295,9 @@ function ChatPage() {
             ))}
           {showEnd && (
             <>
-              <p className="end-text">Chat Ended!! Hope You Enjoyed the Conversation! </p>
               <p className="online-text">🟢 Freshers are active now</p>
+
+              <p className="end-text">Chat Ended!! Hope You Enjoyed the Conversation! </p>
             </>
           )}
         </div>
