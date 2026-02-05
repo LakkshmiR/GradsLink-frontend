@@ -49,11 +49,7 @@ function ChatPage() {
   const handleStartChat = () => {
     const chatId = generateChatId();
     setPairingStatus("pairing");
-    setShowEnd(false);
     setUserId(chatId);
-    setTimeour(() => {
-      setPairingStatus((prev) => (prev === "pairing" ? "busy" : prev));
-    }, 12000);
     socket.emit("join_waiting_queue");
   };
 
@@ -291,31 +287,12 @@ function ChatPage() {
           <button className="start-btn" onClick={handleStartChat}>
             💬 Talk to a Fresher like me
           </button>
-          {/* {!showEnd &&
+          {!showEnd &&
             (pairingStatus === "pairing" ? (
               <p className="online-text">⏳ Pairing you with a fresher...</p>
             ) : (
               <p className="online-text">🟢 Freshers are active now</p>
-            ))} */}
-          {!showEnd && (
-            <>
-              {pairingStatus === "pairing" && (
-                <p className="online-text">⏳ Pairing you with a fresher...</p>
-              )}
-
-              {pairingStatus === "busy" && (
-                <p className="online-text">
-                  🟢 All freshers are currently in a conversation.
-                  <br />
-                  🔁 Please try again in a few minutes
-                </p>
-              )}
-
-              {pairingStatus === "idle" && (
-                <p className="online-text">🟢 Freshers are active now</p>
-              )}
-            </>
-          )}
+            ))}
           {showEnd && (
             <>
               <p className="online-text">🟢 Freshers are active now</p>
