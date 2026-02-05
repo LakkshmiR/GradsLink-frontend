@@ -46,11 +46,23 @@ function ChatPage() {
     return "gradslink_" + Math.random().toString(36).substring(2, 8);
   };
   //Start Chat
+  // const handleStartChat = () => {
+  //   const chatId = generateChatId();
+  //   setPairingStatus("pairing");
+  //   setUserId(chatId);
+  //   socket.emit("join_waiting_queue");
+  // };
   const handleStartChat = () => {
     const chatId = generateChatId();
     setPairingStatus("pairing");
     setUserId(chatId);
+
     socket.emit("join_waiting_queue");
+
+    // ⏱️ Timeout fallback for odd user
+    setTimeout(() => {
+      setPairingStatus((prev) => (prev === "pairing" ? "busy" : prev));
+    }, 12000); // 12 seconds (good UX)
   };
 
   //inputref
@@ -257,12 +269,32 @@ function ChatPage() {
           <button className="start-btn" onClick={handleStartChat}>
             💬 Talk to a Fresher like me
           </button>
-          {!showEnd &&
+          {/* {!showEnd &&
             (pairingStatus === "pairing" ? (
               <p className="online-text">⏳ Pairing you with a fresher...</p>
             ) : (
               <p className="online-text">🟢 Freshers are active now</p>
-            ))}
+            ))} */}
+          {!showEnd && (
+            <>
+              {pairingStatus === "pairing" && (
+                <p className="online-text">⏳ Pairing you with a fresher...</p>
+              )}
+
+              {pairingStatus === "busy" && (
+                <p className="online-text">
+                  ❌ All freshers are currently in a conversation.
+                  <br />
+                  🔁 Please try again in a few minutes
+                </p>
+              )}
+
+              {pairingStatus === "active" && (
+                <p className="online-text">🟢 Freshers are active now</p>
+              )}
+            </>
+          )}
+
           {showEnd && (
             <>
               <p className="online-text">🟢 Freshers are active now</p>
