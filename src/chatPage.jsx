@@ -135,7 +135,7 @@ function ChatPage() {
 
   //Ref for auto scroll
   const chatContainerRef = useRef(null);
-  const bottomRef = useRef(null);
+  // const bottomRef = useRef(null);
   const [isNearBottom, setIsNearBottom] = useState(true);
 
   useEffect(() => {
@@ -151,11 +151,11 @@ function ChatPage() {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isNearBottom) {
-      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [rec_messages, isNearBottom]);
+  // useEffect(() => {
+  //   if (isNearBottom) {
+  //     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [rec_messages, isNearBottom]);
   useLayoutEffect(() => {
     const el = chatContainerRef.current;
     if (!el) return;
@@ -225,7 +225,7 @@ function ChatPage() {
                 <p>{m.msg}</p>
               </div>
             ))}
-            <div ref={bottomRef}></div>
+            {/* <div ref={bottomRef}></div> */}
           </div>
 
           <div className="chat-input-area" ref={inputAreaRef}>
