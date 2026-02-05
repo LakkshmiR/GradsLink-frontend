@@ -255,7 +255,7 @@
     inset: 0;
     z-index: 9999;
     border-radius: 10px;
-    margin-top: 0rem;
+    margin-top: 0rem !important;
     height: calc(var(--vh) * 100);
     max-height: calc(var(--vh) * 100);
     /* position: fixed;
