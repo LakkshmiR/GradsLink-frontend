@@ -283,7 +283,7 @@ function ChatPage() {
 
               {pairingStatus === "busy" && (
                 <p className="online-text">
-                  ❌ All freshers are currently in a conversation.
+                  🟢 All freshers are currently in a conversation.
                   <br />
                   🔁 Please try again in a few minutes
                 </p>
@@ -297,7 +297,13 @@ function ChatPage() {
 
           {showEnd && (
             <>
-              <p className="online-text">🟢 Freshers are active now</p>
+              {pairingStatus === "pairing" && (
+                <p className="online-text">⏳ Pairing you with a fresher...</p>
+              )}
+
+              {pairingStatus === "active" && (
+                <p className="online-text">🟢 Freshers are active now</p>
+              )}
 
               <p className="end-text">Chat Ended!! Hope You Enjoyed the Conversation! </p>
             </>
