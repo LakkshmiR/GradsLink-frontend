@@ -69,12 +69,7 @@ function Register() {
           </div>
 
           <div className="login-elements">
-            <input
-              type="text"
-              value="Engineering Freshers only"
-              readOnly
-              className="login-input readonly"
-            />
+            <input type="text" value="Freshers only" readOnly className="login-input readonly" />
           </div>
 
           <div className="extra-links">
