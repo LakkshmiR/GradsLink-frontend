@@ -21,7 +21,7 @@ function Login() {
           localStorage.setItem("name", result.data.name);
           localStorage.setItem("email", result.data.email);
           const name = result.data.name;
-          navigate("/jobslist", { replace: true });
+          navigate("/chatPage", { replace: true });
         } else {
           alert(result.data);
         }
