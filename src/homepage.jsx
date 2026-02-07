@@ -256,11 +256,11 @@ function Homepage() {
                 signup
               </button>
             </div>
-            <div className="start-chat-box">
-              <button className="start-btn" onClick={handleClick}>
-                💬 Talk to a Fresher like me
-              </button>
-            </div>
+          </div>
+          <div className="start-chat-box">
+            <button className="start-btn" onClick={handleClick}>
+              💬 Talk to a Fresher like me
+            </button>
           </div>
         </div>
       )}
