@@ -45,7 +45,7 @@ function Login() {
         }
 
         console.log("You are google logged in", result.data);
-        navigate("/jobslist", { replace: true });
+        navigate("/chatPage", { replace: true });
       })
       .catch((err) => console.log(err));
   };
