@@ -210,10 +210,30 @@ function ChatPage() {
 
   //still active?
   useEffect(() => {
-    const interval = setInterval(() => {
-      socket.emit("still_active");
-    }, 5000);
-    return () => clearInterval(interval);
+    let interval;
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        interval = setInterval(() => {
+          socket.emit("still_active");
+        }, 5000);
+      } else {
+        clearInterval(interval);
+      }
+    };
+
+    document.addEventListener("visibilityChange", handleVisibilityChange);
+
+    if (!document.hidden) {
+      interval = setInterval(() => {
+        socket.emit("still_active");
+      }, 5000);
+    }
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilityChange", handleVisibilityChange);
+    };
   }, []);
   return (
     <>
