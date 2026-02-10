@@ -208,6 +208,13 @@ function ChatPage() {
     };
   }, [roomId]);
 
+  //still active?
+  useEffect(() => {
+    const interval = setInterval(() => {
+      socket.emit("still_active");
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       {roomId ? (
